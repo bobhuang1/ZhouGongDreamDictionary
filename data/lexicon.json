@@ -1,0 +1,5420 @@
+{
+  "meta": {
+    "purpose": "Cross-language concept map. The local matcher uses it to find Chinese book entries from a question written in any supported language.",
+    "languages": [
+      "en",
+      "ja",
+      "es",
+      "ru",
+      "fr"
+    ],
+    "chineseLocales": [
+      "zh-Hant",
+      "zh-Hans"
+    ],
+    "bookSource": "zh.wikisource.org",
+    "entryCount": 988,
+    "conceptCount": 40,
+    "note": "book substrings are verified against the book by tools/validate.mjs",
+    "markerScripts": "each marker is { hant, hans }",
+    "anchorPurpose": "anchor[lang][surfaceForm] names which book marker that word means, so a Latin-script question can prefer 刀 entries over every other crime entry."
+  },
+  "concepts": [
+    {
+      "id": "snake",
+      "book": [
+        {
+          "hant": "蛇",
+          "hans": "蛇"
+        }
+      ],
+      "en": [
+        "snake",
+        "snakes",
+        "serpent",
+        "serpents",
+        "viper",
+        "cobra"
+      ],
+      "ja": [
+        "蛇",
+        "ヘビ",
+        "マムシ",
+        "ヘビの"
+      ],
+      "es": [
+        "serpiente",
+        "serpientes",
+        "culebra",
+        "vibora",
+        "cobra"
+      ],
+      "ru": [
+        "змея",
+        "змей",
+        "змею",
+        "змеи",
+        "ужа",
+        "гадюка",
+        "аспид"
+      ],
+      "fr": [
+        "serpent",
+        "serpents",
+        "couleuvre",
+        "vipere"
+      ],
+      "anchor": {
+        "en": {
+          "snake": [
+            "蛇"
+          ],
+          "snakes": [
+            "蛇"
+          ]
+        },
+        "es": {
+          "serpiente": [
+            "蛇"
+          ]
+        },
+        "ru": {
+          "змея": [
+            "蛇"
+          ],
+          "змеи": [
+            "蛇"
+          ]
+        },
+        "fr": {
+          "serpent": [
+            "蛇"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dragon",
+      "book": [
+        {
+          "hant": "龍",
+          "hans": "龙"
+        },
+        {
+          "hant": "龍蛇",
+          "hans": "龙蛇"
+        }
+      ],
+      "en": [
+        "dragon",
+        "dragons",
+        "wyrm"
+      ],
+      "ja": [
+        "竜",
+        "龍",
+        "ドラゴン"
+      ],
+      "es": [
+        "dragon",
+        "dragones",
+        "draco"
+      ],
+      "ru": [
+        "дракон",
+        "дракона",
+        "драконов",
+        "ящер"
+      ],
+      "fr": [
+        "dragon",
+        "dragons"
+      ],
+      "anchor": {
+        "en": {
+          "dragon": [
+            "龍"
+          ]
+        },
+        "es": {
+          "dragon": [
+            "龍"
+          ]
+        },
+        "ru": {
+          "дракон": [
+            "龍"
+          ]
+        },
+        "fr": {
+          "dragon": [
+            "龍"
+          ]
+        }
+      }
+    },
+    {
+      "id": "tiger",
+      "book": [
+        {
+          "hant": "虎",
+          "hans": "虎"
+        },
+        {
+          "hant": "豹",
+          "hans": "豹"
+        },
+        {
+          "hant": "獅",
+          "hans": "狮"
+        }
+      ],
+      "en": [
+        "tiger",
+        "tigers",
+        "leopard",
+        "lion"
+      ],
+      "ja": [
+        "虎",
+        "トラ",
+        "ヒョウ",
+        "ライオン"
+      ],
+      "es": [
+        "tigre",
+        "tigres",
+        "leopardo",
+        "leon"
+      ],
+      "ru": [
+        "тигр",
+        "тигра",
+        "тигров",
+        "леопард",
+        "лев"
+      ],
+      "fr": [
+        "tigre",
+        "tigres",
+        "leopard",
+        "lion"
+      ],
+      "anchor": {
+        "en": {
+          "tiger": [
+            "虎"
+          ],
+          "leopard": [
+            "豹"
+          ],
+          "lion": [
+            "獅"
+          ]
+        },
+        "es": {
+          "tigre": [
+            "虎"
+          ],
+          "leopardo": [
+            "豹"
+          ]
+        },
+        "ru": {
+          "тигр": [
+            "虎"
+          ]
+        },
+        "fr": {
+          "tigre": [
+            "虎"
+          ]
+        }
+      }
+    },
+    {
+      "id": "dog",
+      "book": [
+        {
+          "hant": "狗",
+          "hans": "狗"
+        },
+        {
+          "hant": "犬",
+          "hans": "犬"
+        }
+      ],
+      "en": [
+        "dog",
+        "dogs",
+        "puppy",
+        "hound",
+        "pup"
+      ],
+      "ja": [
+        "犬",
+        "狗",
+        "イヌ"
+      ],
+      "es": [
+        "perro",
+        "perros",
+        "cachorro",
+        "can"
+      ],
+      "ru": [
+        "собака",
+        "собаки",
+        "собак",
+        "собаку",
+        "пес",
+        "щенок"
+      ],
+      "fr": [
+        "chien",
+        "chiens",
+        "chiot"
+      ],
+      "anchor": {
+        "en": {
+          "dog": [
+            "狗",
+            "犬"
+          ],
+          "puppy": [
+            "狗",
+            "犬"
+          ]
+        },
+        "es": {
+          "perro": [
+            "狗",
+            "犬"
+          ]
+        },
+        "ru": {
+          "собака": [
+            "狗",
+            "犬"
+          ]
+        },
+        "fr": {
+          "chien": [
+            "狗",
+            "犬"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cat",
+      "book": [
+        {
+          "hant": "貓",
+          "hans": "猫"
+        }
+      ],
+      "en": [
+        "cat",
+        "cats",
+        "kitten",
+        "kitty",
+        "feline"
+      ],
+      "ja": [
+        "猫",
+        "ネコ",
+        "猫科"
+      ],
+      "es": [
+        "gato",
+        "gatos",
+        "gatito",
+        "felino"
+      ],
+      "ru": [
+        "кошка",
+        "кошки",
+        "кошку",
+        "кот",
+        "котенок",
+        "кошенок"
+      ],
+      "fr": [
+        "chat",
+        "chats",
+        "chatte",
+        "chaton",
+        "felin"
+      ],
+      "anchor": {
+        "en": {
+          "cat": [
+            "貓"
+          ],
+          "kitten": [
+            "貓"
+          ]
+        },
+        "es": {
+          "gato": [
+            "貓"
+          ],
+          "gata": [
+            "貓"
+          ]
+        },
+        "ru": {
+          "кошка": [
+            "貓"
+          ],
+          "кот": [
+            "貓"
+          ]
+        },
+        "fr": {
+          "chat": [
+            "貓"
+          ]
+        }
+      }
+    },
+    {
+      "id": "horse",
+      "book": [
+        {
+          "hant": "馬",
+          "hans": "马"
+        }
+      ],
+      "en": [
+        "horse",
+        "horses",
+        "pony",
+        "stallion",
+        "mare"
+      ],
+      "ja": [
+        "馬",
+        "ウマ",
+        "ポニー"
+      ],
+      "es": [
+        "caballo",
+        "caballos",
+        "yegua",
+        "potro"
+      ],
+      "ru": [
+        "лошадь",
+        "лошади",
+        "конь",
+        "коня",
+        "кобыла",
+        "жеребенок"
+      ],
+      "fr": [
+        "cheval",
+        "chevaux",
+        "jument",
+        "poney"
+      ],
+      "anchor": {
+        "en": {
+          "horse": [
+            "馬"
+          ],
+          "horses": [
+            "馬"
+          ],
+          "donkey": [
+            "馬"
+          ],
+          "pony": [
+            "馬"
+          ]
+        },
+        "es": {
+          "caballo": [
+            "馬"
+          ]
+        },
+        "ru": {
+          "лошадь": [
+            "馬"
+          ]
+        },
+        "fr": {
+          "cheval": [
+            "馬"
+          ]
+        }
+      }
+    },
+    {
+      "id": "cow",
+      "book": [
+        {
+          "hant": "牛",
+          "hans": "牛"
+        }
+      ],
+      "en": [
+        "cow",
+        "cows",
+        "bull",
+        "ox",
+        "oxen",
+        "cattle"
+      ],
+      "ja": [
+        "牛",
+        "ウシ",
+        "雄牛"
+      ],
+      "es": [
+        "vaca",
+        "vacas",
+        "toro",
+        "ganado",
+        "buey"
+      ],
+      "ru": [
+        "корова",
+        "корову",
+        "коровы",
+        "бык",
+        "быка",
+        "теля"
+      ],
+      "fr": [
+        "vache",
+        "vaches",
+        "taureau",
+        "boeuf",
+        "veau"
+      ]
+    },
+    {
+      "id": "pig",
+      "book": [
+        {
+          "hant": "豬",
+          "hans": "猪"
+        }
+      ],
+      "en": [
+        "pig",
+        "pigs",
+        "piggy",
+        "hog",
+        "boar",
+        "swine"
+      ],
+      "ja": [
+        "豚",
+        "ブタ",
+        "イノシシ"
+      ],
+      "es": [
+        "cerdo",
+        "cerdos",
+        "cochino",
+        "marrano",
+        "jabali"
+      ],
+      "ru": [
+        "свинья",
+        "свинью",
+        "свиньи",
+        "поросенок",
+        "хрюшка",
+        "кабан"
+      ],
+      "fr": [
+        "cochon",
+        "cochons",
+        "porc",
+        "marcassin",
+        "truie"
+      ]
+    },
+    {
+      "id": "sheep",
+      "book": [
+        {
+          "hant": "羊",
+          "hans": "羊"
+        }
+      ],
+      "en": [
+        "sheep",
+        "lamb",
+        "ram",
+        "goat"
+      ],
+      "ja": [
+        "羊",
+        "ヒツジ",
+        "ヤギ"
+      ],
+      "es": [
+        "oveja",
+        "ovejas",
+        "carnero",
+        "cabra",
+        "borrego"
+      ],
+      "ru": [
+        "овца",
+        "овцу",
+        "овец",
+        "баран",
+        "козел",
+        "ягненок"
+      ],
+      "fr": [
+        "mouton",
+        "moutons",
+        "brebis",
+        "belier",
+        "chevre"
+      ]
+    },
+    {
+      "id": "bird",
+      "book": [
+        {
+          "hant": "鳥",
+          "hans": "鸟"
+        },
+        {
+          "hant": "雀",
+          "hans": "雀"
+        },
+        {
+          "hant": "鴉",
+          "hans": "鸦"
+        },
+        {
+          "hant": "燕",
+          "hans": "燕"
+        },
+        {
+          "hant": "鶴",
+          "hans": "鹤"
+        },
+        {
+          "hant": "雞",
+          "hans": "鸡"
+        }
+      ],
+      "en": [
+        "bird",
+        "birds",
+        "sparrow",
+        "crow",
+        "eagle",
+        "swan",
+        "crane",
+        "pigeon",
+        "owl",
+        "chicken",
+        "hen"
+      ],
+      "ja": [
+        "鳥",
+        "雀",
+        "鳩",
+        "鷹",
+        "燕",
+        "鶴",
+        "鶏",
+        "ニワトリ"
+      ],
+      "es": [
+        "ave",
+        "aves",
+        "pajaro",
+        "gorrion",
+        "cuervo",
+        "aguila",
+        "cisne",
+        "paloma",
+        "buho",
+        "gallina",
+        "pollo"
+      ],
+      "ru": [
+        "птица",
+        "птицу",
+        "птицы",
+        "воробей",
+        "ворон",
+        "орел",
+        "лебедь",
+        "голубь",
+        "сова",
+        "курица"
+      ],
+      "fr": [
+        "oiseau",
+        "oiseaux",
+        "moineau",
+        "corbeau",
+        "aigle",
+        "cygne",
+        "pigeon",
+        "hibou",
+        "poule"
+      ],
+      "anchor": {
+        "en": {
+          "bird": [
+            "鳥"
+          ],
+          "birds": [
+            "鳥"
+          ],
+          "crow": [
+            "鴉"
+          ],
+          "sparrow": [
+            "雀"
+          ],
+          "chicken": [
+            "雞"
+          ],
+          "hen": [
+            "雞"
+          ],
+          "crane": [
+            "鶴"
+          ],
+          "swallow": [
+            "燕"
+          ]
+        },
+        "es": {
+          "pajaro": [
+            "鳥"
+          ],
+          "cuervo": [
+            "鴉"
+          ],
+          "gallina": [
+            "雞"
+          ],
+          "cisne": [
+            "燕"
+          ],
+          "grulla": [
+            "鶴"
+          ]
+        },
+        "ru": {
+          "птица": [
+            "鳥"
+          ],
+          "ворона": [
+            "鴉"
+          ],
+          "курица": [
+            "雞"
+          ]
+        },
+        "fr": {
+          "oiseau": [
+            "鳥"
+          ],
+          "corbeau": [
+            "鴉"
+          ],
+          "poule": [
+            "雞"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fish",
+      "book": [
+        {
+          "hant": "魚",
+          "hans": "鱼"
+        },
+        {
+          "hant": "鯉",
+          "hans": "鲤"
+        },
+        {
+          "hant": "釣",
+          "hans": "钓"
+        }
+      ],
+      "en": [
+        "fish",
+        "carp",
+        "salmon",
+        "fishing",
+        "fished"
+      ],
+      "ja": [
+        "魚",
+        "サカナ",
+        "コイ",
+        "釣り",
+        "釣り糸"
+      ],
+      "es": [
+        "pescado",
+        "peces",
+        "carpa",
+        "pescar",
+        "pesca"
+      ],
+      "ru": [
+        "рыба",
+        "рыбу",
+        "рыбы",
+        "карп",
+        "рыбалка",
+        "лосось"
+      ],
+      "fr": [
+        "poisson",
+        "poissons",
+        "carpe",
+        "peche",
+        "salmone"
+      ],
+      "anchor": {
+        "en": {
+          "fish": [
+            "魚"
+          ],
+          "carp": [
+            "鯉"
+          ],
+          "fishing": [
+            "釣"
+          ]
+        },
+        "es": {
+          "pez": [
+            "魚"
+          ],
+          "carpa": [
+            "鯉"
+          ],
+          "pescar": [
+            "釣"
+          ]
+        },
+        "ru": {
+          "рыба": [
+            "魚"
+          ],
+          "карп": [
+            "鯉"
+          ],
+          "рыбалка": [
+            "釣"
+          ]
+        },
+        "fr": {
+          "poisson": [
+            "魚"
+          ],
+          "carpe": [
+            "鯉"
+          ],
+          "peche": [
+            "釣"
+          ]
+        }
+      }
+    },
+    {
+      "id": "insect",
+      "book": [
+        {
+          "hant": "蟲",
+          "hans": "虫"
+        },
+        {
+          "hant": "蚊",
+          "hans": "蚊"
+        },
+        {
+          "hant": "蜂",
+          "hans": "蜂"
+        },
+        {
+          "hant": "蛾",
+          "hans": "蛾"
+        },
+        {
+          "hant": "蜈蚣",
+          "hans": "蜈蚣"
+        },
+        {
+          "hant": "蠅",
+          "hans": "蝇"
+        }
+      ],
+      "en": [
+        "insect",
+        "bug",
+        "bee",
+        "mosquito",
+        "ant",
+        "spider",
+        "moth",
+        "worm",
+        "fly",
+        "cockroach",
+        "centipede"
+      ],
+      "ja": [
+        "虫",
+        "蜂",
+        "蚊",
+        "蟻",
+        "蜘蛛",
+        "蛾",
+        "蠅",
+        "ゴキブリ",
+        "ミミズ"
+      ],
+      "es": [
+        "insecto",
+        "bicho",
+        "abeja",
+        "mosquito",
+        "hormiga",
+        "arana",
+        "polilla",
+        "gusano",
+        "mosca",
+        "cucaracha",
+        "centipata"
+      ],
+      "ru": [
+        "насекомое",
+        "жук",
+        "пчела",
+        "комар",
+        "муравей",
+        "паук",
+        "моль",
+        "червь",
+        "муха",
+        "таракан",
+        "сороконожка"
+      ],
+      "fr": [
+        "insecte",
+        "abeille",
+        "moustique",
+        "fourmi",
+        "araignee",
+        "phalene",
+        "ver",
+        "mouche",
+        "cafard",
+        "centipede"
+      ]
+    },
+    {
+      "id": "turtle",
+      "book": [
+        {
+          "hant": "龜",
+          "hans": "龟"
+        },
+        {
+          "hant": "鱉",
+          "hans": "鳖"
+        }
+      ],
+      "en": [
+        "turtle",
+        "tortoise",
+        "turtles"
+      ],
+      "ja": [
+        "亀",
+        "ウミガメ",
+        "鼈"
+      ],
+      "es": [
+        "tortuga",
+        "tortugas",
+        "caparazon"
+      ],
+      "ru": [
+        "черепаха",
+        "черепаху",
+        "панцирь"
+      ],
+      "fr": [
+        "tortue",
+        "tortues",
+        "carapace"
+      ],
+      "anchor": {
+        "en": {
+          "turtle": [
+            "龜"
+          ],
+          "tortoise": [
+            "龜"
+          ],
+          "softshell": [
+            "鱉"
+          ]
+        },
+        "es": {
+          "tortuga": [
+            "龜"
+          ],
+          "caparazon": [
+            "龜"
+          ]
+        },
+        "ru": {
+          "черепаха": [
+            "龜"
+          ]
+        },
+        "fr": {
+          "tortue": [
+            "龜"
+          ]
+        }
+      }
+    },
+    {
+      "id": "water",
+      "book": [
+        {
+          "hant": "水",
+          "hans": "水"
+        },
+        {
+          "hant": "河",
+          "hans": "河"
+        },
+        {
+          "hant": "江",
+          "hans": "江"
+        },
+        {
+          "hant": "海",
+          "hans": "海"
+        },
+        {
+          "hant": "井",
+          "hans": "井"
+        }
+      ],
+      "en": [
+        "water",
+        "river",
+        "sea",
+        "ocean",
+        "lake",
+        "well",
+        "pond",
+        "pool",
+        "flood",
+        "splash",
+        "wave",
+        "swimming",
+        "swam"
+      ],
+      "ja": [
+        "水",
+        "川",
+        "海",
+        "井戸",
+        "池",
+        "波",
+        "泳",
+        "氾濫"
+      ],
+      "es": [
+        "agua",
+        "rio",
+        "mar",
+        "oceano",
+        "lago",
+        "pozo",
+        "charco",
+        "inundacion",
+        "ola",
+        "nadar",
+        "nado"
+      ],
+      "ru": [
+        "вода",
+        "река",
+        "море",
+        "океан",
+        "озеро",
+        "колодец",
+        "пруд",
+        "наводнение",
+        "волна",
+        "плавать",
+        "плыть"
+      ],
+      "fr": [
+        "eau",
+        "riviere",
+        "mer",
+        "ocean",
+        "lac",
+        "puits",
+        "mare",
+        "inondation",
+        "vague",
+        "nager",
+        "nage"
+      ],
+      "anchor": {
+        "en": {
+          "river": [
+            "河",
+            "江"
+          ],
+          "sea": [
+            "海"
+          ],
+          "ocean": [
+            "海"
+          ],
+          "lake": [
+            "海"
+          ],
+          "rain": [
+            "雨"
+          ],
+          "well": [
+            "井"
+          ],
+          "flood": [
+            "水"
+          ]
+        },
+        "es": {
+          "rio": [
+            "河",
+            "江"
+          ],
+          "mar": [
+            "海"
+          ],
+          "lluvia": [
+            "雨"
+          ],
+          "pozo": [
+            "井"
+          ]
+        },
+        "ru": {
+          "река": [
+            "河",
+            "江"
+          ],
+          "море": [
+            "海"
+          ],
+          "дождь": [
+            "雨"
+          ],
+          "колодец": [
+            "井"
+          ]
+        },
+        "fr": {
+          "riviere": [
+            "河",
+            "江"
+          ],
+          "mer": [
+            "海"
+          ],
+          "pluie": [
+            "雨"
+          ],
+          "puits": [
+            "井"
+          ]
+        }
+      }
+    },
+    {
+      "id": "fire",
+      "book": [
+        {
+          "hant": "火",
+          "hans": "火"
+        },
+        {
+          "hant": "燈",
+          "hans": "灯"
+        },
+        {
+          "hant": "燭",
+          "hans": "烛"
+        },
+        {
+          "hant": "爐",
+          "hans": "炉"
+        },
+        {
+          "hant": "煙",
+          "hans": "烟"
+        },
+        {
+          "hant": "燒",
+          "hans": "烧"
+        }
+      ],
+      "en": [
+        "fire",
+        "flame",
+        "blaze",
+        "candle",
+        "lamp",
+        "torch",
+        "smoke",
+        "burn",
+        "burning",
+        "burnt",
+        "bonfire",
+        "wildfire"
+      ],
+      "ja": [
+        "火",
+        "炎",
+        "燈",
+        "蝋燭",
+        "煙",
+        "燃える",
+        "焼ける",
+        "たきび"
+      ],
+      "es": [
+        "fuego",
+        "llama",
+        "hoguera",
+        "vela",
+        "lampara",
+        "humo",
+        "quemar",
+        "arder",
+        "fogata",
+        "incendio"
+      ],
+      "ru": [
+        "огонь",
+        "пламя",
+        "пожар",
+        "свеча",
+        "лампа",
+        "дым",
+        "гореть",
+        "горит",
+        "костер",
+        "тлеет"
+      ],
+      "fr": [
+        "feu",
+        "flamme",
+        "incendie",
+        "bougie",
+        "lampe",
+        "fumee",
+        "bruler",
+        "brule",
+        "feu de camp"
+      ],
+      "anchor": {
+        "en": {
+          "fire": [
+            "火"
+          ],
+          "flame": [
+            "燒",
+            "燈"
+          ],
+          "smoke": [
+            "煙"
+          ],
+          "stove": [
+            "爐"
+          ],
+          "candle": [
+            "燭"
+          ]
+        },
+        "es": {
+          "fuego": [
+            "火"
+          ],
+          "llama": [
+            "燒"
+          ],
+          "humo": [
+            "煙"
+          ],
+          "vela": [
+            "燭"
+          ]
+        },
+        "ru": {
+          "огонь": [
+            "火"
+          ],
+          "пламя": [
+            "燒"
+          ],
+          "дым": [
+            "煙"
+          ]
+        },
+        "fr": {
+          "feu": [
+            "火"
+          ],
+          "flamme": [
+            "燒"
+          ],
+          "fumee": [
+            "煙"
+          ],
+          "bougie": [
+            "燭"
+          ]
+        }
+      }
+    },
+    {
+      "id": "earth",
+      "book": [
+        {
+          "hant": "土",
+          "hans": "土"
+        },
+        {
+          "hant": "地",
+          "hans": "地"
+        },
+        {
+          "hant": "山",
+          "hans": "山"
+        },
+        {
+          "hant": "石",
+          "hans": "石"
+        },
+        {
+          "hant": "泥",
+          "hans": "泥"
+        },
+        {
+          "hant": "沙",
+          "hans": "沙"
+        },
+        {
+          "hant": "田",
+          "hans": "田"
+        },
+        {
+          "hant": "岩",
+          "hans": "岩"
+        }
+      ],
+      "en": [
+        "earth",
+        "ground",
+        "soil",
+        "dirt",
+        "land",
+        "mountain",
+        "hill",
+        "stone",
+        "rock",
+        "mud",
+        "sand",
+        "field",
+        "cliff",
+        "cave"
+      ],
+      "ja": [
+        "土",
+        "地面",
+        "大地",
+        "山",
+        "岩",
+        "石",
+        "泥",
+        "砂",
+        "田",
+        "崖",
+        "洞窟"
+      ],
+      "es": [
+        "tierra",
+        "suelo",
+        "terreno",
+        "montana",
+        "roca",
+        "piedra",
+        "barro",
+        "arena",
+        "campo",
+        "cueva"
+      ],
+      "ru": [
+        "земля",
+        "почва",
+        "грунт",
+        "гора",
+        "горы",
+        "камень",
+        "скала",
+        "грязь",
+        "песок",
+        "поле",
+        "пещера"
+      ],
+      "fr": [
+        "terre",
+        "sol",
+        "terrain",
+        "montagne",
+        "roche",
+        "pierre",
+        "boue",
+        "sable",
+        "champ",
+        "grotte"
+      ]
+    },
+    {
+      "id": "weather",
+      "book": [
+        {
+          "hant": "雨",
+          "hans": "雨"
+        },
+        {
+          "hant": "陰雨",
+          "hans": "阴雨"
+        },
+        {
+          "hant": "風",
+          "hans": "风"
+        },
+        {
+          "hant": "晴",
+          "hans": "晴"
+        },
+        {
+          "hant": "雲",
+          "hans": "云"
+        },
+        {
+          "hant": "雪",
+          "hans": "雪"
+        },
+        {
+          "hant": "雷",
+          "hans": "雷"
+        },
+        {
+          "hant": "電",
+          "hans": "电"
+        },
+        {
+          "hant": "霧",
+          "hans": "雾"
+        },
+        {
+          "hant": "霜",
+          "hans": "霜"
+        }
+      ],
+      "en": [
+        "rain",
+        "rainy",
+        "wind",
+        "windy",
+        "cloud",
+        "clouds",
+        "storm",
+        "thunder",
+        "lightning",
+        "snow",
+        "fog",
+        "mist",
+        "clear"
+      ],
+      "ja": [
+        "雨",
+        "風",
+        "雲",
+        "嵐",
+        "雷",
+        "電",
+        "雪",
+        "霧",
+        "晴れ",
+        "曇り"
+      ],
+      "es": [
+        "lluvia",
+        "lluvioso",
+        "viento",
+        "nube",
+        "nubes",
+        "tormenta",
+        "trueno",
+        "rayo",
+        "nieve",
+        "niebla",
+        "cielo",
+        "despejado"
+      ],
+      "ru": [
+        "дождь",
+        "дождливый",
+        "ветер",
+        "ветрено",
+        "облако",
+        "облака",
+        "гроза",
+        "гром",
+        "молния",
+        "снег",
+        "туман",
+        "небо",
+        "ясно"
+      ],
+      "fr": [
+        "pluie",
+        "pluvieux",
+        "vent",
+        "venteux",
+        "nuage",
+        "nuages",
+        "tempete",
+        "orage",
+        "tonnerre",
+        "eclair",
+        "neige",
+        "brouillard",
+        "ciel",
+        "degage"
+      ],
+      "anchor": {
+        "en": {
+          "rain": [
+            "雨"
+          ],
+          "snow": [
+            "雪"
+          ],
+          "thunder": [
+            "雷"
+          ],
+          "lightning": [
+            "電"
+          ],
+          "fog": [
+            "霧"
+          ],
+          "frost": [
+            "霜"
+          ],
+          "cloud": [
+            "雲"
+          ],
+          "storm": [
+            "雨"
+          ]
+        },
+        "es": {
+          "lluvia": [
+            "雨"
+          ],
+          "nieve": [
+            "雪"
+          ],
+          "trueno": [
+            "雷"
+          ],
+          "rayo": [
+            "電"
+          ],
+          "niebla": [
+            "霧"
+          ]
+        },
+        "ru": {
+          "дождь": [
+            "雨"
+          ],
+          "снег": [
+            "雪"
+          ],
+          "гром": [
+            "雷"
+          ],
+          "молния": [
+            "電"
+          ]
+        },
+        "fr": {
+          "pluie": [
+            "雨"
+          ],
+          "neige": [
+            "雪"
+          ],
+          "tonnerre": [
+            "雷"
+          ],
+          "eclair": [
+            "電"
+          ],
+          "brouillard": [
+            "霧"
+          ]
+        }
+      }
+    },
+    {
+      "id": "sky",
+      "book": [
+        {
+          "hant": "日",
+          "hans": "日"
+        },
+        {
+          "hant": "月",
+          "hans": "月"
+        },
+        {
+          "hant": "星",
+          "hans": "星"
+        },
+        {
+          "hant": "天",
+          "hans": "天"
+        }
+      ],
+      "en": [
+        "sun",
+        "sunshine",
+        "moon",
+        "moonlight",
+        "star",
+        "stars",
+        "starry",
+        "sunrise",
+        "sunset",
+        "eclipse",
+        "sky",
+        "heaven"
+      ],
+      "ja": [
+        "日",
+        "太陽",
+        "月",
+        "月光",
+        "星",
+        "満月",
+        "日没",
+        "日出",
+        "空",
+        "天"
+      ],
+      "es": [
+        "sol",
+        "luna",
+        "estrella",
+        "estrellas",
+        "amanecer",
+        "atardecer",
+        "eclipse",
+        "cielo"
+      ],
+      "ru": [
+        "солнце",
+        "луна",
+        "лунный",
+        "звезда",
+        "звезды",
+        "рассвет",
+        "закат",
+        "небо",
+        "лунный свет"
+      ],
+      "fr": [
+        "soleil",
+        "lune",
+        "etoile",
+        "etoiles",
+        "lever du soleil",
+        "coucher du soleil",
+        "ciel"
+      ]
+    },
+    {
+      "id": "body",
+      "book": [
+        {
+          "hant": "身",
+          "hans": "身"
+        },
+        {
+          "hant": "頭",
+          "hans": "头"
+        },
+        {
+          "hant": "面",
+          "hans": "面"
+        },
+        {
+          "hant": "口",
+          "hans": "口"
+        },
+        {
+          "hant": "牙",
+          "hans": "牙"
+        },
+        {
+          "hant": "齒",
+          "hans": "齿"
+        },
+        {
+          "hant": "髮",
+          "hans": "发"
+        },
+        {
+          "hant": "手",
+          "hans": "手"
+        },
+        {
+          "hant": "腳",
+          "hans": "脚"
+        },
+        {
+          "hant": "足",
+          "hans": "足"
+        },
+        {
+          "hant": "腹",
+          "hans": "腹"
+        },
+        {
+          "hant": "心",
+          "hans": "心"
+        },
+        {
+          "hant": "血",
+          "hans": "血"
+        },
+        {
+          "hant": "舌",
+          "hans": "舌"
+        },
+        {
+          "hant": "肩",
+          "hans": "肩"
+        }
+      ],
+      "en": [
+        "body",
+        "head",
+        "face",
+        "eye",
+        "eyes",
+        "ear",
+        "ears",
+        "nose",
+        "mouth",
+        "teeth",
+        "tooth",
+        "hair",
+        "hand",
+        "hands",
+        "arm",
+        "leg",
+        "legs",
+        "foot",
+        "feet",
+        "stomach",
+        "belly",
+        "heart",
+        "blood",
+        "bone",
+        "skin",
+        "neck",
+        "finger",
+        "tongue",
+        "cheek",
+        "wound",
+        "back",
+        "shoulder",
+        "thigh",
+        "knee"
+      ],
+      "ja": [
+        "体",
+        "身",
+        "頭",
+        "顔",
+        "目",
+        "眼",
+        "耳",
+        "鼻",
+        "口",
+        "歯",
+        "髪",
+        "手",
+        "腕",
+        "脚",
+        "足",
+        "腹",
+        "心",
+        "血",
+        "骨",
+        "肌",
+        "首",
+        "指",
+        "舌",
+        "傷",
+        "肩"
+      ],
+      "es": [
+        "cuerpo",
+        "cabeza",
+        "cara",
+        "ojo",
+        "ojos",
+        "oreja",
+        "nariz",
+        "boca",
+        "diente",
+        "dientes",
+        "pelo",
+        "cabello",
+        "mano",
+        "manos",
+        "brazo",
+        "pierna",
+        "piernas",
+        "pie",
+        "pies",
+        "estomago",
+        "panza",
+        "corazon",
+        "sangre",
+        "hueso",
+        "piel",
+        "cuello",
+        "dedo",
+        "lengua",
+        "herida",
+        "espalda",
+        "hombro"
+      ],
+      "ru": [
+        "тело",
+        "голова",
+        "лицо",
+        "глаз",
+        "глаза",
+        "ухо",
+        "нос",
+        "рот",
+        "зуб",
+        "зубы",
+        "волосы",
+        "рука",
+        "руки",
+        "нога",
+        "ноги",
+        "стопа",
+        "живот",
+        "сердце",
+        "кровь",
+        "кость",
+        "кожа",
+        "шея",
+        "палец",
+        "язык",
+        "рана",
+        "спина",
+        "плечо"
+      ],
+      "fr": [
+        "corps",
+        "tete",
+        "visage",
+        "oeil",
+        "yeux",
+        "oreille",
+        "nez",
+        "bouche",
+        "dent",
+        "dents",
+        "cheveux",
+        "main",
+        "mains",
+        "bras",
+        "jambe",
+        "jambes",
+        "pied",
+        "pieds",
+        "ventre",
+        "coeur",
+        "sang",
+        "os",
+        "peau",
+        "cou",
+        "doigt",
+        "langue",
+        "plaie",
+        "dos",
+        "epaule"
+      ],
+      "anchor": {
+        "en": {
+          "hair": [
+            "髮"
+          ],
+          "head": [
+            "頭"
+          ],
+          "face": [
+            "面"
+          ],
+          "hand": [
+            "手"
+          ],
+          "foot": [
+            "腳"
+          ],
+          "leg": [
+            "腳"
+          ],
+          "blood": [
+            "血"
+          ],
+          "tongue": [
+            "舌"
+          ],
+          "shoulder": [
+            "肩"
+          ]
+        },
+        "es": {
+          "pelo": [
+            "髮"
+          ],
+          "cabeza": [
+            "頭"
+          ],
+          "cara": [
+            "面"
+          ],
+          "mano": [
+            "手"
+          ],
+          "pie": [
+            "腳"
+          ],
+          "sangre": [
+            "血"
+          ]
+        },
+        "ru": {
+          "волосы": [
+            "髮"
+          ],
+          "голова": [
+            "頭"
+          ],
+          "лицо": [
+            "面"
+          ],
+          "рука": [
+            "手"
+          ],
+          "нога": [
+            "腳"
+          ],
+          "кровь": [
+            "血"
+          ]
+        },
+        "fr": {
+          "cheveux": [
+            "髮"
+          ],
+          "tete": [
+            "頭"
+          ],
+          "visage": [
+            "面"
+          ],
+          "main": [
+            "手"
+          ],
+          "pied": [
+            "腳"
+          ],
+          "sang": [
+            "血"
+          ]
+        }
+      }
+    },
+    {
+      "id": "illness",
+      "book": [
+        {
+          "hant": "病",
+          "hans": "病"
+        },
+        {
+          "hant": "疾",
+          "hans": "疾"
+        },
+        {
+          "hant": "瘡",
+          "hans": "疮"
+        },
+        {
+          "hant": "傷",
+          "hans": "伤"
+        },
+        {
+          "hant": "瘦",
+          "hans": "瘦"
+        },
+        {
+          "hant": "肥",
+          "hans": "肥"
+        }
+      ],
+      "en": [
+        "sick",
+        "sickness",
+        "illness",
+        "ill",
+        "disease",
+        "pain",
+        "painful",
+        "fever",
+        "ache",
+        "hurt",
+        "wound",
+        "injury",
+        "infection",
+        "swollen"
+      ],
+      "ja": [
+        "病",
+        "病気",
+        "痛",
+        "熱",
+        "傷",
+        "症状",
+        "体調"
+      ],
+      "es": [
+        "enfermo",
+        "enfermedad",
+        "enfermar",
+        "dolor",
+        "fiebre",
+        "herida",
+        "malestar",
+        "hinchado"
+      ],
+      "ru": [
+        "болезнь",
+        "болезни",
+        "заболеть",
+        "боль",
+        "жар",
+        "горячка",
+        "рана",
+        "травма",
+        "здоровье"
+      ],
+      "fr": [
+        "malade",
+        "maladie",
+        "douleur",
+        "fievre",
+        "plaie",
+        "blessure",
+        "gonfle"
+      ],
+      "anchor": {
+        "en": {
+          "illness": [
+            "病"
+          ],
+          "sick": [
+            "病"
+          ],
+          "disease": [
+            "疾"
+          ],
+          "ill": [
+            "病"
+          ],
+          "wounded": [
+            "傷"
+          ],
+          "injury": [
+            "傷"
+          ],
+          "fat": [
+            "肥"
+          ],
+          "thin": [
+            "瘦"
+          ],
+          "sore": [
+            "瘡"
+          ]
+        },
+        "es": {
+          "enfermedad": [
+            "病"
+          ],
+          "enfermo": [
+            "病"
+          ],
+          "doente": [
+            "疾"
+          ],
+          "herida": [
+            "傷"
+          ],
+          "gordo": [
+            "肥"
+          ],
+          "delgado": [
+            "瘦"
+          ],
+          "llaga": [
+            "瘡"
+          ]
+        },
+        "ru": {
+          "болезнь": [
+            "病"
+          ],
+          "болен": [
+            "病"
+          ],
+          "больнои": [
+            "疾"
+          ],
+          "рана": [
+            "傷"
+          ],
+          "толстыи": [
+            "肥"
+          ],
+          "худои": [
+            "瘦"
+          ],
+          "язва": [
+            "瘡"
+          ]
+        },
+        "fr": {
+          "maladie": [
+            "病"
+          ],
+          "malade": [
+            "病"
+          ],
+          "blessure": [
+            "傷"
+          ],
+          "gras": [
+            "肥"
+          ],
+          "maigre": [
+            "瘦"
+          ],
+          "plaie": [
+            "瘡"
+          ]
+        }
+      }
+    },
+    {
+      "id": "death",
+      "book": [
+        {
+          "hant": "死",
+          "hans": "死"
+        },
+        {
+          "hant": "喪",
+          "hans": "丧"
+        },
+        {
+          "hant": "殮",
+          "hans": "殓"
+        },
+        {
+          "hant": "棺",
+          "hans": "棺"
+        },
+        {
+          "hant": "墓",
+          "hans": "墓"
+        },
+        {
+          "hant": "塚",
+          "hans": "冢"
+        },
+        {
+          "hant": "孝",
+          "hans": "孝"
+        },
+        {
+          "hant": "哭",
+          "hans": "哭"
+        },
+        {
+          "hant": "泣",
+          "hans": "泣"
+        }
+      ],
+      "en": [
+        "death",
+        "die",
+        "died",
+        "dead",
+        "funeral",
+        "coffin",
+        "grave",
+        "burial",
+        "mourning",
+        "grief",
+        "cry",
+        "crying",
+        "tears"
+      ],
+      "ja": [
+        "死",
+        "死亡",
+        "葬儀",
+        "棺",
+        "墓",
+        "弔",
+        "泣",
+        "涙",
+        "葬式",
+        "遺体"
+      ],
+      "es": [
+        "muerte",
+        "morir",
+        "murio",
+        "muerto",
+        "funeral",
+        "ataud",
+        "tumba",
+        "luto",
+        "llanto",
+        "llorar",
+        "duelo"
+      ],
+      "ru": [
+        "смерть",
+        "умер",
+        "умерла",
+        "погиб",
+        "похороны",
+        "гроб",
+        "могила",
+        "траур",
+        "плач",
+        "плакать",
+        "горе"
+      ],
+      "fr": [
+        "mort",
+        "mourir",
+        "deces",
+        "enterrement",
+        "cercueil",
+        "tombe",
+        "deuil",
+        "pleurs",
+        "pleurer",
+        "chagrin"
+      ],
+      "anchor": {
+        "en": {
+          "death": [
+            "死"
+          ],
+          "die": [
+            "死"
+          ],
+          "died": [
+            "死"
+          ],
+          "dying": [
+            "死"
+          ],
+          "corpse": [
+            "殮"
+          ],
+          "coffin": [
+            "棺"
+          ],
+          "grave": [
+            "墓"
+          ],
+          "funeral": [
+            "喪"
+          ],
+          "weeping": [
+            "哭"
+          ],
+          "dead": [
+            "死"
+          ],
+          "cried": [
+            "哭"
+          ]
+        },
+        "es": {
+          "muerte": [
+            "死"
+          ],
+          "morir": [
+            "死"
+          ],
+          "muerto": [
+            "死"
+          ],
+          "cadaver": [
+            "殮"
+          ],
+          "ataud": [
+            "棺"
+          ],
+          "tumba": [
+            "墓"
+          ],
+          "funeral": [
+            "喪"
+          ],
+          "llorar": [
+            "哭"
+          ]
+        },
+        "ru": {
+          "смерть": [
+            "死"
+          ],
+          "умер": [
+            "死"
+          ],
+          "мертвыи": [
+            "死"
+          ],
+          "труп": [
+            "殮"
+          ],
+          "гроб": [
+            "棺"
+          ],
+          "могила": [
+            "墓"
+          ],
+          "плакать": [
+            "哭"
+          ]
+        },
+        "fr": {
+          "mort": [
+            "死"
+          ],
+          "mourir": [
+            "死"
+          ],
+          "cercueil": [
+            "棺"
+          ],
+          "tombe": [
+            "墓"
+          ],
+          "pleurer": [
+            "哭"
+          ],
+          "funeral": [
+            "喪"
+          ]
+        }
+      }
+    },
+    {
+      "id": "food",
+      "book": [
+        {
+          "hant": "食",
+          "hans": "食"
+        },
+        {
+          "hant": "飯",
+          "hans": "饭"
+        },
+        {
+          "hant": "米",
+          "hans": "米"
+        },
+        {
+          "hant": "菜",
+          "hans": "菜"
+        },
+        {
+          "hant": "瓜",
+          "hans": "瓜"
+        },
+        {
+          "hant": "肉",
+          "hans": "肉"
+        },
+        {
+          "hant": "酒",
+          "hans": "酒"
+        },
+        {
+          "hant": "餅",
+          "hans": "饼"
+        },
+        {
+          "hant": "麵",
+          "hans": "面"
+        },
+        {
+          "hant": "果",
+          "hans": "果"
+        },
+        {
+          "hant": "食飯",
+          "hans": "食饭"
+        }
+      ],
+      "en": [
+        "food",
+        "eat",
+        "eating",
+        "ate",
+        "meal",
+        "rice",
+        "noodle",
+        "bread",
+        "meat",
+        "beef",
+        "pork",
+        "vegetable",
+        "fruit",
+        "melon",
+        "drink",
+        "drinking",
+        "drank",
+        "wine",
+        "alcohol",
+        "beer",
+        "tea",
+        "soup",
+        "cake",
+        "sugar",
+        "candy",
+        "hungry",
+        "thirsty",
+        "dinner",
+        "breakfast"
+      ],
+      "ja": [
+        "食",
+        "食べる",
+        "食事",
+        "ご飯",
+        "米",
+        "麺",
+        "パン",
+        "肉",
+        "牛肉",
+        "豚肉",
+        "野菜",
+        "果物",
+        "瓜",
+        "飲む",
+        "飲食",
+        "酒",
+        "お茶",
+        "スープ",
+        "お菓子",
+        "甘味",
+        "空腹",
+        "夕食",
+        "朝食"
+      ],
+      "es": [
+        "comida",
+        "comer",
+        "comiendo",
+        "comi",
+        "arroz",
+        "fideo",
+        "pan",
+        "carne",
+        "res",
+        "cerdo",
+        "verdura",
+        "fruta",
+        "melon",
+        "bebida",
+        "beber",
+        "bebiendo",
+        "bebi",
+        "vino",
+        "alcohol",
+        "cerveza",
+        "te",
+        "sopa",
+        "pastel",
+        "dulce",
+        "hambre",
+        "sed",
+        "cena",
+        "desayuno"
+      ],
+      "ru": [
+        "еда",
+        "есть",
+        "ем",
+        "обед",
+        "ужин",
+        "завтрак",
+        "рис",
+        "лапша",
+        "хлеб",
+        "мясо",
+        "говядина",
+        "свинина",
+        "овощи",
+        "фрукты",
+        "дыня",
+        "пить",
+        "выпил",
+        "напиток",
+        "вино",
+        "алкоголь",
+        "пиво",
+        "чай",
+        "суп",
+        "сладкое",
+        "голод",
+        "жажда"
+      ],
+      "fr": [
+        "manger",
+        "mange",
+        "nourriture",
+        "repas",
+        "riz",
+        "nouilles",
+        "pain",
+        "viande",
+        "boeuf",
+        "porc",
+        "legume",
+        "fruit",
+        "melon",
+        "boire",
+        "boisson",
+        "vin",
+        "alcool",
+        "biere",
+        "the",
+        "soupe",
+        "gateau",
+        "sucre",
+        "bonbon",
+        "faim",
+        "soif",
+        "diner",
+        "petit-dejeuner"
+      ]
+    },
+    {
+      "id": "money",
+      "book": [
+        {
+          "hant": "金",
+          "hans": "金"
+        },
+        {
+          "hant": "銀",
+          "hans": "银"
+        },
+        {
+          "hant": "珠",
+          "hans": "珠"
+        },
+        {
+          "hant": "玉",
+          "hans": "玉"
+        },
+        {
+          "hant": "錢",
+          "hans": "钱"
+        },
+        {
+          "hant": "財",
+          "hans": "财"
+        },
+        {
+          "hant": "帛",
+          "hans": "帛"
+        }
+      ],
+      "en": [
+        "money",
+        "gold",
+        "silver",
+        "coin",
+        "coins",
+        "cash",
+        "wealth",
+        "rich",
+        "treasure",
+        "jewel",
+        "gem",
+        "banknote"
+      ],
+      "ja": [
+        "お金",
+        "金",
+        "銀",
+        "銭",
+        "貨幣",
+        "財産",
+        "富",
+        "宝珠",
+        "宝石",
+        "財宝"
+      ],
+      "es": [
+        "dinero",
+        "oro",
+        "plata",
+        "moneda",
+        "efectivo",
+        "riqueza",
+        "tesoro",
+        "joya",
+        "gema",
+        "billete"
+      ],
+      "ru": [
+        "деньги",
+        "денег",
+        "золото",
+        "серебро",
+        "монета",
+        "монеты",
+        "богатство",
+        "сокровище",
+        "драгоценность",
+        "купюра"
+      ],
+      "fr": [
+        "argent",
+        "or",
+        "piece",
+        "monnaie",
+        "fortune",
+        "richesse",
+        "tresor",
+        "bijou",
+        "gemme",
+        "billet"
+      ],
+      "anchor": {
+        "en": {
+          "money": [
+            "財",
+            "金"
+          ],
+          "coin": [
+            "錢"
+          ],
+          "coins": [
+            "錢"
+          ],
+          "gold": [
+            "金"
+          ],
+          "cash": [
+            "財"
+          ],
+          "currency": [
+            "錢"
+          ],
+          "payment": [
+            "財"
+          ],
+          "dollar": [
+            "財"
+          ],
+          "salary": [
+            "祿"
+          ],
+          "wealth": [
+            "富",
+            "貴"
+          ],
+          "rich": [
+            "富",
+            "貴"
+          ]
+        },
+        "es": {
+          "dinero": [
+            "財",
+            "金"
+          ],
+          "monedas": [
+            "錢"
+          ],
+          "oro": [
+            "金"
+          ],
+          "sueldo": [
+            "祿"
+          ],
+          "riqueza": [
+            "富",
+            "貴"
+          ]
+        },
+        "ru": {
+          "деньги": [
+            "財",
+            "金"
+          ],
+          "монеты": [
+            "錢"
+          ],
+          "золото": [
+            "金"
+          ],
+          "зарплата": [
+            "祿"
+          ]
+        },
+        "fr": {
+          "argent": [
+            "財",
+            "金"
+          ],
+          "monnaie": [
+            "錢"
+          ],
+          "pieces": [
+            "錢"
+          ],
+          "or": [
+            "金"
+          ],
+          "salaire": [
+            "祿"
+          ]
+        }
+      }
+    },
+    {
+      "id": "house",
+      "book": [
+        {
+          "hant": "宮",
+          "hans": "宫"
+        },
+        {
+          "hant": "室",
+          "hans": "室"
+        },
+        {
+          "hant": "屋",
+          "hans": "屋"
+        },
+        {
+          "hant": "家",
+          "hans": "家"
+        },
+        {
+          "hant": "宅",
+          "hans": "宅"
+        },
+        {
+          "hant": "房",
+          "hans": "房"
+        },
+        {
+          "hant": "門",
+          "hans": "门"
+        },
+        {
+          "hant": "戶",
+          "hans": "户"
+        },
+        {
+          "hant": "廚",
+          "hans": "厨"
+        },
+        {
+          "hant": "廁",
+          "hans": "厕"
+        },
+        {
+          "hant": "倉",
+          "hans": "仓"
+        },
+        {
+          "hant": "庫",
+          "hans": "库"
+        },
+        {
+          "hant": "床",
+          "hans": "床"
+        }
+      ],
+      "en": [
+        "house",
+        "home",
+        "room",
+        "bedroom",
+        "door",
+        "gate",
+        "window",
+        "wall",
+        "kitchen",
+        "toilet",
+        "bathroom",
+        "garage",
+        "building",
+        "apartment",
+        "mansion",
+        "palace"
+      ],
+      "ja": [
+        "家",
+        "部屋",
+        "寝室",
+        "扉",
+        "ドア",
+        "窓",
+        "壁",
+        "台所",
+        "トイレ",
+        "風呂",
+        "倉庫",
+        "建物",
+        "マンション",
+        "豪邸",
+        "宮殿"
+      ],
+      "es": [
+        "casa",
+        "hogar",
+        "habitacion",
+        "cuarto",
+        "dormitorio",
+        "puerta",
+        "ventana",
+        "pared",
+        "cocina",
+        "bano",
+        "aseo",
+        "garaje",
+        "edificio",
+        "apartamento",
+        "mansion",
+        "palacio"
+      ],
+      "ru": [
+        "дом",
+        "квартира",
+        "комната",
+        "спальня",
+        "дверь",
+        "двери",
+        "окно",
+        "стена",
+        "кухня",
+        "туалет",
+        "ванная",
+        "гараж",
+        "здание",
+        "жилье",
+        "особняк",
+        "дворец"
+      ],
+      "fr": [
+        "maison",
+        "logement",
+        "chambre",
+        "porte",
+        "fenetre",
+        "mur",
+        "cuisine",
+        "toilettes",
+        "salle de bain",
+        "garage",
+        "immeuble",
+        "appartement",
+        "manoir",
+        "palais"
+      ],
+      "anchor": {
+        "en": {
+          "building": [
+            "屋",
+            "樓"
+          ],
+          "house": [
+            "家",
+            "宅",
+            "屋"
+          ],
+          "home": [
+            "家"
+          ],
+          "apartment": [
+            "室"
+          ],
+          "room": [
+            "室"
+          ],
+          "kitchen": [
+            "廚"
+          ],
+          "toilet": [
+            "廁"
+          ],
+          "bathroom": [
+            "廁"
+          ],
+          "warehouse": [
+            "倉"
+          ],
+          "buildings": [
+            "屋",
+            "樓"
+          ]
+        },
+        "es": {
+          "edificio": [
+            "屋",
+            "樓"
+          ],
+          "casa": [
+            "家",
+            "宅",
+            "屋"
+          ],
+          "hogar": [
+            "家"
+          ],
+          "departamento": [
+            "室"
+          ],
+          "cocina": [
+            "廚"
+          ],
+          "bano": [
+            "廁"
+          ]
+        },
+        "ru": {
+          "дом": [
+            "家",
+            "宅",
+            "屋"
+          ],
+          "здание": [
+            "屋",
+            "樓"
+          ],
+          "квартира": [
+            "室"
+          ],
+          "кухня": [
+            "廚"
+          ]
+        },
+        "fr": {
+          "maison": [
+            "家",
+            "宅",
+            "屋"
+          ],
+          "immeuble": [
+            "屋",
+            "樓"
+          ],
+          "appartement": [
+            "室"
+          ],
+          "cuisine": [
+            "廚"
+          ],
+          "salle": [
+            "室"
+          ]
+        }
+      }
+    },
+    {
+      "id": "vehicle",
+      "book": [
+        {
+          "hant": "車",
+          "hans": "车"
+        },
+        {
+          "hant": "船",
+          "hans": "船"
+        },
+        {
+          "hant": "舟",
+          "hans": "舟"
+        },
+        {
+          "hant": "騎",
+          "hans": "骑"
+        },
+        {
+          "hant": "乘",
+          "hans": "乘"
+        },
+        {
+          "hant": "帆",
+          "hans": "帆"
+        },
+        {
+          "hant": "輪",
+          "hans": "轮"
+        },
+        {
+          "hant": "橋",
+          "hans": "桥"
+        }
+      ],
+      "en": [
+        "car",
+        "cars",
+        "bus",
+        "train",
+        "truck",
+        "boat",
+        "ship",
+        "plane",
+        "airplane",
+        "bicycle",
+        "motorcycle",
+        "taxi",
+        "drive",
+        "driving",
+        "ride",
+        "journey",
+        "travel",
+        "bridge"
+      ],
+      "ja": [
+        "車",
+        "自動車",
+        "バス",
+        "電車",
+        "トラック",
+        "船",
+        "飛行機",
+        "自転車",
+        "バイク",
+        "タクシー",
+        "運転",
+        "乗る",
+        "旅行",
+        "旅",
+        "橋"
+      ],
+      "es": [
+        "carro",
+        "coche",
+        "auto",
+        "autobus",
+        "tren",
+        "camion",
+        "barco",
+        "avion",
+        "bicicleta",
+        "moto",
+        "taxi",
+        "conducir",
+        "manejar",
+        "viaje",
+        "viajar",
+        "puente"
+      ],
+      "ru": [
+        "машина",
+        "автомобиль",
+        "автобус",
+        "поезд",
+        "грузовик",
+        "корабль",
+        "судно",
+        "лодка",
+        "самолет",
+        "велосипед",
+        "мотоцикл",
+        "такси",
+        "водить",
+        "ехать",
+        "путешествие",
+        "поездка",
+        "мост"
+      ],
+      "fr": [
+        "voiture",
+        "voitures",
+        "bus",
+        "train",
+        "camion",
+        "bateau",
+        "navire",
+        "avion",
+        "velo",
+        "moto",
+        "taxi",
+        "conduire",
+        "rouler",
+        "voyage",
+        "voyager",
+        "pont"
+      ],
+      "anchor": {
+        "en": {
+          "car": [
+            "車"
+          ],
+          "ship": [
+            "船",
+            "舟"
+          ],
+          "boat": [
+            "船",
+            "舟"
+          ],
+          "sail": [
+            "帆"
+          ],
+          "bridge": [
+            "橋"
+          ],
+          "cars": [
+            "車"
+          ]
+        },
+        "es": {
+          "coche": [
+            "車"
+          ],
+          "carro": [
+            "車"
+          ],
+          "barco": [
+            "船",
+            "舟"
+          ],
+          "puente": [
+            "橋"
+          ]
+        },
+        "ru": {
+          "машина": [
+            "車"
+          ],
+          "автомобиль": [
+            "車"
+          ],
+          "корабль": [
+            "船",
+            "舟"
+          ],
+          "лодка": [
+            "船",
+            "舟"
+          ],
+          "мост": [
+            "橋"
+          ]
+        },
+        "fr": {
+          "voiture": [
+            "車"
+          ],
+          "bateau": [
+            "船",
+            "舟"
+          ],
+          "pont": [
+            "橋"
+          ]
+        }
+      }
+    },
+    {
+      "id": "clothing",
+      "book": [
+        {
+          "hant": "衣",
+          "hans": "衣"
+        },
+        {
+          "hant": "服",
+          "hans": "服"
+        },
+        {
+          "hant": "裳",
+          "hans": "裳"
+        },
+        {
+          "hant": "衫",
+          "hans": "衫"
+        },
+        {
+          "hant": "帽",
+          "hans": "帽"
+        },
+        {
+          "hant": "冠",
+          "hans": "冠"
+        },
+        {
+          "hant": "帶",
+          "hans": "带"
+        },
+        {
+          "hant": "鞋",
+          "hans": "鞋"
+        },
+        {
+          "hant": "履",
+          "hans": "履"
+        },
+        {
+          "hant": "巾",
+          "hans": "巾"
+        },
+        {
+          "hant": "帳",
+          "hans": "帐"
+        },
+        {
+          "hant": "被",
+          "hans": "被"
+        },
+        {
+          "hant": "褥",
+          "hans": "褥"
+        },
+        {
+          "hant": "鏡",
+          "hans": "镜"
+        },
+        {
+          "hant": "梳",
+          "hans": "梳"
+        }
+      ],
+      "en": [
+        "clothes",
+        "clothing",
+        "shirt",
+        "dress",
+        "coat",
+        "jacket",
+        "skirt",
+        "pants",
+        "trousers",
+        "hat",
+        "cap",
+        "shoes",
+        "boots",
+        "socks",
+        "sock",
+        "belt",
+        "robe",
+        "naked",
+        "nude",
+        "uniform",
+        "wedding dress",
+        "mirror",
+        "comb"
+      ],
+      "ja": [
+        "服",
+        "服飾",
+        "シャツ",
+        "スカート",
+        "コート",
+        "帽子",
+        "靴",
+        "靴下",
+        "ベルト",
+        "帯",
+        "裸",
+        "制服",
+        "婚約",
+        "鏡",
+        "櫛"
+      ],
+      "es": [
+        "ropa",
+        "camisa",
+        "vestido",
+        "falda",
+        "pantalon",
+        "abrigo",
+        "sombrero",
+        "gorra",
+        "zapatos",
+        "botas",
+        "calcetines",
+        "cinturon",
+        "desnudo",
+        "uniforme",
+        "espejo",
+        "peine"
+      ],
+      "ru": [
+        "одежда",
+        "одежду",
+        "рубашка",
+        "платье",
+        "юбка",
+        "куртка",
+        "пальто",
+        "шляпа",
+        "шапка",
+        "обувь",
+        "ботинки",
+        "носки",
+        "ремень",
+        "голая",
+        "наряд",
+        "зеркало",
+        "гребень"
+      ],
+      "fr": [
+        "vetement",
+        "vêtements",
+        "chemise",
+        "robe",
+        "jupe",
+        "manteau",
+        "chapeau",
+        "casquette",
+        "chaussures",
+        "bottes",
+        "chaussettes",
+        "ceinture",
+        "nu",
+        "nue",
+        "uniforme",
+        "miroir",
+        "peigne"
+      ]
+    },
+    {
+      "id": "person",
+      "book": [
+        {
+          "hant": "人",
+          "hans": "人"
+        },
+        {
+          "hant": "王",
+          "hans": "王"
+        },
+        {
+          "hant": "帝",
+          "hans": "帝"
+        },
+        {
+          "hant": "君",
+          "hans": "君"
+        },
+        {
+          "hant": "官",
+          "hans": "官"
+        },
+        {
+          "hant": "吏",
+          "hans": "吏"
+        },
+        {
+          "hant": "僧",
+          "hans": "僧"
+        },
+        {
+          "hant": "尼",
+          "hans": "尼"
+        },
+        {
+          "hant": "神",
+          "hans": "神"
+        },
+        {
+          "hant": "佛",
+          "hans": "佛"
+        },
+        {
+          "hant": "鬼",
+          "hans": "鬼"
+        },
+        {
+          "hant": "貴人",
+          "hans": "贵人"
+        },
+        {
+          "hant": "婦",
+          "hans": "妇"
+        },
+        {
+          "hant": "女",
+          "hans": "女"
+        },
+        {
+          "hant": "男",
+          "hans": "男"
+        },
+        {
+          "hant": "母",
+          "hans": "母"
+        },
+        {
+          "hant": "父",
+          "hans": "父"
+        },
+        {
+          "hant": "夫",
+          "hans": "夫"
+        },
+        {
+          "hant": "妻",
+          "hans": "妻"
+        },
+        {
+          "hant": "子",
+          "hans": "子"
+        },
+        {
+          "hant": "孫",
+          "hans": "孙"
+        },
+        {
+          "hant": "客",
+          "hans": "客"
+        },
+        {
+          "hant": "親",
+          "hans": "亲"
+        }
+      ],
+      "en": [
+        "person",
+        "people",
+        "man",
+        "woman",
+        "child",
+        "king",
+        "queen",
+        "emperor",
+        "prince",
+        "princess",
+        "ruler",
+        "official",
+        "boss",
+        "stranger",
+        "friend",
+        "mother",
+        "father",
+        "husband",
+        "wife",
+        "spouse",
+        "baby",
+        "pregnant",
+        "ancestor",
+        "grandmother",
+        "grandfather",
+        "naked person",
+        "crowd"
+      ],
+      "ja": [
+        "人",
+        "男性",
+        "女性",
+        "子供",
+        "王",
+        "女王",
+        "皇帝",
+        "王子",
+        "姫",
+        "領袖",
+        "役員",
+        "他人",
+        "朋友",
+        "母",
+        "父",
+        "夫",
+        "妻",
+        "配偶者",
+        "赤ん坊",
+        "妊娠",
+        "祖先",
+        "祖母",
+        "祖父",
+        "人混み"
+      ],
+      "es": [
+        "persona",
+        "personas",
+        "hombre",
+        "mujer",
+        "nino",
+        "rey",
+        "reina",
+        "emperador",
+        "princesa",
+        "jefe",
+        "funcionario",
+        "desconocido",
+        "amigo",
+        "madre",
+        "padre",
+        "esposo",
+        "esposa",
+        "bebe",
+        "embarazada",
+        "abuela",
+        "abuelo",
+        "multitud"
+      ],
+      "ru": [
+        "человек",
+        "люди",
+        "мужчина",
+        "женщина",
+        "ребенок",
+        "король",
+        "королева",
+        "император",
+        "князь",
+        "начальник",
+        "чиновник",
+        "незнакомец",
+        "друг",
+        "мать",
+        "отец",
+        "муж",
+        "жена",
+        "супруг",
+        "младенец",
+        "беременная",
+        "бабушка",
+        "дедушка",
+        "толпа"
+      ],
+      "fr": [
+        "personne",
+        "personnes",
+        "homme",
+        "femme",
+        "enfant",
+        "roi",
+        "reine",
+        "empereur",
+        "prince",
+        "princesse",
+        "patron",
+        "fonctionnaire",
+        "inconnu",
+        "ami",
+        "mere",
+        "pere",
+        "mari",
+        "epouse",
+        "bebe",
+        "enceinte",
+        "ancetre",
+        "grand-mere",
+        "grand-pere",
+        "foule"
+      ]
+    },
+    {
+      "id": "love",
+      "book": [
+        {
+          "hant": "夫妻",
+          "hans": "夫妻"
+        },
+        {
+          "hant": "婚",
+          "hans": "婚"
+        },
+        {
+          "hant": "嫁",
+          "hans": "嫁"
+        },
+        {
+          "hant": "娶",
+          "hans": "娶"
+        },
+        {
+          "hant": "愛",
+          "hans": "爱"
+        },
+        {
+          "hant": "情",
+          "hans": "情"
+        },
+        {
+          "hant": "親",
+          "hans": "亲"
+        },
+        {
+          "hant": "抱",
+          "hans": "抱"
+        },
+        {
+          "hant": "孕",
+          "hans": "孕"
+        },
+        {
+          "hant": "產",
+          "hans": "产"
+        },
+        {
+          "hant": "懷",
+          "hans": "怀"
+        },
+        {
+          "hant": "子",
+          "hans": "子"
+        }
+      ],
+      "en": [
+        "love",
+        "loved",
+        "romance",
+        "romantic",
+        "relationship",
+        "dating",
+        "date",
+        "kiss",
+        "kissed",
+        "hug",
+        "hugged",
+        "married",
+        "marry",
+        "marriage",
+        "wedding",
+        "engagement",
+        "breakup",
+        "divorce",
+        "pregnant",
+        "pregnancy",
+        "ex",
+        "crush",
+        "infatuated"
+      ],
+      "ja": [
+        "恋愛",
+        "好き",
+        "恋人",
+        "デート",
+        "キス",
+        "ハグ",
+        "結婚",
+        "婚約",
+        "離婚",
+        "別れ",
+        "妊娠",
+        "身孕",
+        "片想い",
+        "不倫"
+      ],
+      "es": [
+        "amor",
+        "amo",
+        "enamorado",
+        "romance",
+        "relacion",
+        "cita",
+        "beso",
+        "besar",
+        "abrazo",
+        "abrazar",
+        "casarse",
+        "boda",
+        "novio",
+        "novia",
+        "divorcio",
+        "ruptura",
+        "embarazo",
+        "enamorada",
+        "ex"
+      ],
+      "ru": [
+        "любовь",
+        "любить",
+        "любимый",
+        "роман",
+        "отношения",
+        "свидание",
+        "поцелуй",
+        "целовать",
+        "обнимать",
+        "женитьба",
+        "свадьба",
+        "помолвка",
+        "развод",
+        "расставание",
+        "беременность",
+        "беременная",
+        "бывший",
+        "влюбленный"
+      ],
+      "fr": [
+        "amour",
+        "aimer",
+        "aimante",
+        "romance",
+        "relation",
+        "rendez-vous",
+        "bisou",
+        "embrasser",
+        "coup",
+        "mariage",
+        "noce",
+        "fiancé",
+        "fiancee",
+        "divorce",
+        "rupture",
+        "grossesse",
+        "enceinte",
+        "ex"
+      ]
+    },
+    {
+      "id": "work",
+      "book": [
+        {
+          "hant": "書",
+          "hans": "书"
+        },
+        {
+          "hant": "文",
+          "hans": "文"
+        },
+        {
+          "hant": "筆",
+          "hans": "笔"
+        },
+        {
+          "hant": "硯",
+          "hans": "砚"
+        },
+        {
+          "hant": "文書",
+          "hans": "文书"
+        },
+        {
+          "hant": "字",
+          "hans": "字"
+        },
+        {
+          "hant": "書信",
+          "hans": "书信"
+        },
+        {
+          "hant": "印",
+          "hans": "印"
+        },
+        {
+          "hant": "官",
+          "hans": "官"
+        },
+        {
+          "hant": "祿",
+          "hans": "禄"
+        },
+        {
+          "hant": "遷",
+          "hans": "迁"
+        },
+        {
+          "hant": "作事",
+          "hans": "作事"
+        },
+        {
+          "hant": "交易",
+          "hans": "交易"
+        },
+        {
+          "hant": "利",
+          "hans": "利"
+        }
+      ],
+      "en": [
+        "work",
+        "job",
+        "office",
+        "career",
+        "business",
+        "meeting",
+        "interview",
+        "exam",
+        "test",
+        "study",
+        "writing",
+        "letter",
+        "writing exam",
+        "sign",
+        "contract",
+        "money",
+        "profit",
+        "trade",
+        "sell",
+        "buy",
+        "promotion",
+        "boss",
+        "salary",
+        "retire",
+        "unemployment"
+      ],
+      "ja": [
+        "仕事",
+        "職場",
+        "オフィス",
+        "キャリア",
+        "ビジネス",
+        "会議",
+        "面接",
+        "試験",
+        "勉強",
+        "字",
+        "手紙",
+        "契約",
+        "儲け",
+        "取引",
+        "昇進",
+        "給料",
+        "失業",
+        "退職",
+        "老板"
+      ],
+      "es": [
+        "trabajo",
+        "empleo",
+        "oficina",
+        "carrera",
+        "negocio",
+        "reunion",
+        "entrevista",
+        "examen",
+        "estudiar",
+        "escribir",
+        "carta",
+        "contrato",
+        "ganar",
+        "vender",
+        "comprar",
+        "ascenso",
+        "salario",
+        "desempleo",
+        "jubilacion"
+      ],
+      "ru": [
+        "работа",
+        "работу",
+        "офис",
+        "карьера",
+        "бизнес",
+        "встреча",
+        "собеседование",
+        "экзамен",
+        "учеба",
+        "писать",
+        "письмо",
+        "контракт",
+        "заработок",
+        "прибыль",
+        "продать",
+        "купить",
+        "повышение",
+        "зарплата",
+        "безработица",
+        "увольнение",
+        "пенсия"
+      ],
+      "fr": [
+        "travail",
+        "emploi",
+        "bureau",
+        "carriere",
+        "affaires",
+        "reunion",
+        "entretien",
+        "examen",
+        "etudier",
+        "ecrire",
+        "lettre",
+        "contrat",
+        "gain",
+        "profit",
+        "vendre",
+        "acheter",
+        "promotion",
+        "salaire",
+        "chomage",
+        "retraite"
+      ],
+      "anchor": {
+        "en": {
+          "job": [
+            "官"
+          ],
+          "office": [
+            "官"
+          ],
+          "promotion": [
+            "遷"
+          ],
+          "salary": [
+            "祿"
+          ],
+          "writing": [
+            "書"
+          ],
+          "letter": [
+            "書"
+          ],
+          "exam": [
+            "印"
+          ],
+          "brush": [
+            "筆"
+          ]
+        },
+        "es": {
+          "trabajo": [
+            "官"
+          ],
+          "empleo": [
+            "官"
+          ],
+          "ascenso": [
+            "遷"
+          ],
+          "sueldo": [
+            "祿"
+          ],
+          "escribir": [
+            "書"
+          ],
+          "carta": [
+            "書"
+          ],
+          "examen": [
+            "印"
+          ]
+        },
+        "ru": {
+          "работа": [
+            "官"
+          ],
+          "повышение": [
+            "遷"
+          ],
+          "жалованье": [
+            "祿"
+          ],
+          "писать": [
+            "書"
+          ],
+          "письмо": [
+            "書"
+          ],
+          "экзамен": [
+            "印"
+          ]
+        },
+        "fr": {
+          "travail": [
+            "官"
+          ],
+          "emploi": [
+            "官"
+          ],
+          "promotion": [
+            "遷"
+          ],
+          "salaire": [
+            "祿"
+          ],
+          "ecrire": [
+            "書"
+          ],
+          "lettre": [
+            "書"
+          ],
+          "examen": [
+            "印"
+          ]
+        }
+      }
+    },
+    {
+      "id": "crime",
+      "book": [
+        {
+          "hant": "刀",
+          "hans": "刀"
+        },
+        {
+          "hant": "劍",
+          "hans": "剑"
+        },
+        {
+          "hant": "戈",
+          "hans": "戈"
+        },
+        {
+          "hant": "打",
+          "hans": "打"
+        },
+        {
+          "hant": "罵",
+          "hans": "骂"
+        },
+        {
+          "hant": "鬥",
+          "hans": "斗"
+        },
+        {
+          "hant": "傷",
+          "hans": "伤"
+        },
+        {
+          "hant": "殺",
+          "hans": "杀"
+        },
+        {
+          "hant": "獄",
+          "hans": "狱"
+        },
+        {
+          "hant": "官",
+          "hans": "官"
+        },
+        {
+          "hant": "捕",
+          "hans": "捕"
+        },
+        {
+          "hant": "賊",
+          "hans": "贼"
+        },
+        {
+          "hant": "盜",
+          "hans": "盗"
+        },
+        {
+          "hant": "逃",
+          "hans": "逃"
+        },
+        {
+          "hant": "訟",
+          "hans": "讼"
+        }
+      ],
+      "en": [
+        "fight",
+        "fighting",
+        "fought",
+        "argument",
+        "quarrel",
+        "angry",
+        "beat",
+        "beating",
+        "hit",
+        "stab",
+        "stabbed",
+        "sword",
+        "knife",
+        "weapon",
+        "gun",
+        "police",
+        "jail",
+        "prison",
+        "arrest",
+        "arrested",
+        "crime",
+        "steal",
+        "stolen",
+        "thief",
+        "robber",
+        "robbery",
+        "chase",
+        "escape",
+        "court",
+        "lawsuit",
+        "prisoner"
+      ],
+      "ja": [
+        "けんか",
+        "喧嘩",
+        "争う",
+        "怒り",
+        "殴る",
+        "殴られた",
+        "刺す",
+        "刀",
+        "剣",
+        "武器",
+        "銃",
+        "警察",
+        "牢",
+        "刑務所",
+        "逮捕",
+        "罪",
+        "盗む",
+        "盗",
+        "泥棒",
+        "追う",
+        "逃げる",
+        "裁判",
+        "訴訟"
+      ],
+      "es": [
+        "pelea",
+        "pelear",
+        "disputa",
+        "riña",
+        "enfadado",
+        "golpear",
+        "golpeado",
+        "apuñalar",
+        "cuchillo",
+        "espada",
+        "arma",
+        "pistola",
+        "policia",
+        "carcel",
+        "prision",
+        "arrestado",
+        "delito",
+        "robar",
+        "ladron",
+        "perseguir",
+        "huir",
+        "juicio",
+        "demanda"
+      ],
+      "ru": [
+        "драка",
+        "драться",
+        "ссора",
+        "ссориться",
+        "зол",
+        "сердит",
+        "бить",
+        "ударил",
+        "нож",
+        "меч",
+        "оружие",
+        "пистолет",
+        "полиция",
+        "тюрьма",
+        "арест",
+        "арестован",
+        "преступление",
+        "кража",
+        "вор",
+        "грабить",
+        "погоня",
+        "побег",
+        "суд",
+        "иск"
+      ],
+      "fr": [
+        "bagarre",
+        "battre",
+        "dispute",
+        "querelle",
+        "colere",
+        "frapper",
+        "frappe",
+        "poignarder",
+        "couteau",
+        "epee",
+        "arme",
+        "pistolet",
+        "police",
+        "prison",
+        "cellule",
+        "arrete",
+        "delit",
+        "voler",
+        "voleur",
+        "poursuite",
+        "fuir",
+        "procès",
+        "plaider"
+      ],
+      "anchor": {
+        "en": {
+          "knife": [
+            "刀"
+          ],
+          "knives": [
+            "刀"
+          ],
+          "sword": [
+            "劍"
+          ],
+          "blade": [
+            "刀"
+          ],
+          "spear": [
+            "戈"
+          ],
+          "thief": [
+            "盜",
+            "賊"
+          ],
+          "robber": [
+            "盜",
+            "賊"
+          ],
+          "burglar": [
+            "盜"
+          ],
+          "jail": [
+            "獄"
+          ],
+          "prison": [
+            "獄"
+          ],
+          "court": [
+            "訟"
+          ],
+          "arrest": [
+            "捕"
+          ],
+          "handcuffs": [
+            "捕"
+          ],
+          "chase": [
+            "逃"
+          ],
+          "fight": [
+            "鬥"
+          ],
+          "killed": [
+            "殺"
+          ],
+          "murder": [
+            "殺"
+          ],
+          "thieves": [
+            "盜",
+            "賊"
+          ],
+          "cell": [
+            "獄"
+          ],
+          "chased": [
+            "逃"
+          ],
+          "fighting": [
+            "鬥"
+          ]
+        },
+        "es": {
+          "cuchillo": [
+            "刀"
+          ],
+          "espada": [
+            "劍"
+          ],
+          "ladron": [
+            "盜",
+            "賊"
+          ],
+          "carcel": [
+            "獄"
+          ],
+          "juicio": [
+            "訟"
+          ],
+          "pelea": [
+            "鬥"
+          ],
+          "asesinato": [
+            "殺"
+          ],
+          "huir": [
+            "逃"
+          ]
+        },
+        "ru": {
+          "нож": [
+            "刀"
+          ],
+          "меч": [
+            "劍"
+          ],
+          "вор": [
+            "盜",
+            "賊"
+          ],
+          "тюрьма": [
+            "獄"
+          ],
+          "суд": [
+            "訟"
+          ],
+          "драка": [
+            "鬥"
+          ],
+          "убииство": [
+            "殺"
+          ],
+          "побег": [
+            "逃"
+          ]
+        },
+        "fr": {
+          "couteau": [
+            "刀"
+          ],
+          "epee": [
+            "劍"
+          ],
+          "voleur": [
+            "盜",
+            "賊"
+          ],
+          "prison": [
+            "獄"
+          ],
+          "proces": [
+            "訟"
+          ],
+          "bagarre": [
+            "鬥"
+          ],
+          "meurtre": [
+            "殺"
+          ],
+          "fuite": [
+            "逃"
+          ]
+        }
+      }
+    },
+    {
+      "id": "child",
+      "book": [
+        {
+          "hant": "子",
+          "hans": "子"
+        },
+        {
+          "hant": "小兒",
+          "hans": "小儿"
+        },
+        {
+          "hant": "孫",
+          "hans": "孙"
+        },
+        {
+          "hant": "兒",
+          "hans": "儿"
+        },
+        {
+          "hant": "女",
+          "hans": "女"
+        },
+        {
+          "hant": "生",
+          "hans": "生"
+        },
+        {
+          "hant": "產",
+          "hans": "产"
+        },
+        {
+          "hant": "懷",
+          "hans": "怀"
+        },
+        {
+          "hant": "孕",
+          "hans": "孕"
+        }
+      ],
+      "en": [
+        "child",
+        "children",
+        "baby",
+        "son",
+        "daughter",
+        "grandchild",
+        "grandson",
+        "granddaughter",
+        "boy",
+        "girl",
+        "kids",
+        "descendant",
+        "inherit",
+        "heir",
+        "offspring"
+      ],
+      "ja": [
+        "子供",
+        "子ども",
+        "赤ん坊",
+        "息子",
+        "娘",
+        "孫",
+        "孫娘",
+        "男の子",
+        "女の子",
+        "相続",
+        "後継者"
+      ],
+      "es": [
+        "nino",
+        "ninos",
+        "bebe",
+        "hijo",
+        "hija",
+        "nieto",
+        "nina",
+        "descendiente",
+        "heredero",
+        "herencia"
+      ],
+      "ru": [
+        "ребенок",
+        "дети",
+        "ребенка",
+        "младенец",
+        "сын",
+        "дочь",
+        "внук",
+        "внучка",
+        "мальчик",
+        "девочка",
+        "наследник",
+        "наследство"
+      ],
+      "fr": [
+        "enfant",
+        "enfants",
+        "bebe",
+        "fils",
+        "fille",
+        "petit-fils",
+        "petite-fille",
+        "garcon",
+        "heritage",
+        "heritier",
+        "descendant"
+      ]
+    },
+    {
+      "id": "loneliness",
+      "book": [
+        {
+          "hant": "自",
+          "hans": "自"
+        },
+        {
+          "hant": "一",
+          "hans": "一"
+        },
+        {
+          "hant": "空",
+          "hans": "空"
+        },
+        {
+          "hant": "無人",
+          "hans": "无人"
+        },
+        {
+          "hant": "離",
+          "hans": "离"
+        },
+        {
+          "hant": "別",
+          "hans": "别"
+        },
+        {
+          "hant": "散",
+          "hans": "散"
+        },
+        {
+          "hant": "失",
+          "hans": "失"
+        },
+        {
+          "hant": "走",
+          "hans": "走"
+        }
+      ],
+      "en": [
+        "alone",
+        "lonely",
+        "solitude",
+        "empty",
+        "lost",
+        "lose",
+        "abandoned",
+        "abandonment",
+        "left behind",
+        "forgotten",
+        "separation",
+        "parting",
+        "goodbye",
+        "isolation",
+        "rejection",
+        "refused"
+      ],
+      "ja": [
+        "一人",
+        "ひとり",
+        "孤独",
+        "寂しい",
+        "空",
+        "見捨て",
+        "留守番",
+        "別れ",
+        "さよなら",
+        "孤独感",
+        "拒否"
+      ],
+      "es": [
+        "solo",
+        "sola",
+        "soledad",
+        "vacio",
+        "perdido",
+        "perdida",
+        "abandonado",
+        "abandono",
+        "despedida",
+        "adios",
+        "rechazo",
+        "aislamiento"
+      ],
+      "ru": [
+        "один",
+        "одна",
+        "одиночество",
+        "пусто",
+        "потерял",
+        "потерять",
+        "покинутый",
+        "покинуть",
+        "прощание",
+        "отказ",
+        "одинокость"
+      ],
+      "fr": [
+        "seul",
+        "seule",
+        "solitude",
+        "vide",
+        "perdu",
+        "perdue",
+        "abandonne",
+        "abandon",
+        "au revoir",
+        "depart",
+        "rejet",
+        "isolement"
+      ]
+    },
+    {
+      "id": "wealth",
+      "book": [
+        {
+          "hant": "富",
+          "hans": "富"
+        },
+        {
+          "hant": "貴",
+          "hans": "贵"
+        },
+        {
+          "hant": "官",
+          "hans": "官"
+        },
+        {
+          "hant": "祿",
+          "hans": "禄"
+        },
+        {
+          "hant": "財",
+          "hans": "财"
+        },
+        {
+          "hant": "寶",
+          "hans": "宝"
+        },
+        {
+          "hant": "榮",
+          "hans": "荣"
+        },
+        {
+          "hant": "遷",
+          "hans": "迁"
+        },
+        {
+          "hant": "位",
+          "hans": "位"
+        },
+        {
+          "hant": "發",
+          "hans": "发"
+        }
+      ],
+      "en": [
+        "wealth",
+        "wealthy",
+        "rich",
+        "riches",
+        "fortune",
+        "money",
+        "success",
+        "successful",
+        "prosperity",
+        "prosper",
+        "promotion",
+        "raise",
+        "fame",
+        "famous",
+        "honor",
+        "honour",
+        "power",
+        "authority",
+        "high position",
+        "nobility",
+        "noble"
+      ],
+      "ja": [
+        "富",
+        "豊か",
+        "お金",
+        "財産",
+        "成功",
+        "大成功",
+        "出世",
+        "昇進",
+        "昇格",
+        "名誉",
+        "名声",
+        "権力",
+        "地位",
+        "裕福",
+        "栄華"
+      ],
+      "es": [
+        "riqueza",
+        "rico",
+        "rica",
+        "fortuna",
+        "dinero",
+        "exito",
+        "exitoso",
+        "prosperidad",
+        "ascenso",
+        "promocion",
+        "fama",
+        "honor",
+        "poder",
+        "autoridad",
+        "nobleza",
+        "acomodado"
+      ],
+      "ru": [
+        "богатство",
+        "богатый",
+        "богата",
+        "состояние",
+        "деньги",
+        "успех",
+        "успешный",
+        "процветание",
+        "повышение",
+        "слава",
+        "известность",
+        "честь",
+        "власть",
+        "положение"
+      ],
+      "fr": [
+        "richesse",
+        "riche",
+        "fortune",
+        "argent",
+        "succes",
+        "reussi",
+        "prospérité",
+        "promotion",
+        "celebrite",
+        "honneur",
+        "pouvoir",
+        "autorite",
+        "noblesse"
+      ]
+    },
+    {
+      "id": "travel",
+      "book": [
+        {
+          "hant": "行",
+          "hans": "行"
+        },
+        {
+          "hant": "走",
+          "hans": "走"
+        },
+        {
+          "hant": "遊",
+          "hans": "游"
+        },
+        {
+          "hant": "出",
+          "hans": "出"
+        },
+        {
+          "hant": "去",
+          "hans": "去"
+        },
+        {
+          "hant": "來",
+          "hans": "来"
+        },
+        {
+          "hant": "回",
+          "hans": "回"
+        },
+        {
+          "hant": "路",
+          "hans": "路"
+        },
+        {
+          "hant": "遠",
+          "hans": "远"
+        },
+        {
+          "hant": "海",
+          "hans": "海"
+        },
+        {
+          "hant": "山",
+          "hans": "山"
+        },
+        {
+          "hant": "地",
+          "hans": "地"
+        }
+      ],
+      "en": [
+        "travel",
+        "travelling",
+        "traveling",
+        "trip",
+        "journey",
+        "leave",
+        "leaving",
+        "departure",
+        "depart",
+        "arrive",
+        "arrival",
+        "return",
+        "coming back",
+        "going home",
+        "move",
+        "moving",
+        "relocation",
+        "road",
+        "path",
+        "way",
+        "distance",
+        "far",
+        "abroad",
+        "foreign",
+        "border",
+        "pass"
+      ],
+      "ja": [
+        "旅行",
+        "旅",
+        "旅立つ",
+        "出発",
+        "出る",
+        "到着",
+        "到着する",
+        "帰る",
+        "帰宅",
+        "引っ越す",
+        "移動",
+        "道",
+        "道程",
+        "遠い",
+        "近い",
+        "海外",
+        "出国",
+        "国境",
+        "通る"
+      ],
+      "es": [
+        "viaje",
+        "viajar",
+        "viajando",
+        "salir",
+        "saliendo",
+        "partida",
+        "partir",
+        "llegar",
+        "llegada",
+        "volver",
+        "regreso",
+        "regresar",
+        "mudanza",
+        "mudarse",
+        "camino",
+        "ruta",
+        "lejos",
+        "cerca",
+        "extranjero",
+        "frontera",
+        "cruzar"
+      ],
+      "ru": [
+        "путешествие",
+        "путешествовать",
+        "путешествуя",
+        "поездка",
+        "уехать",
+        "уезжать",
+        "отъезд",
+        "выезд",
+        "прибыть",
+        "приезд",
+        "вернуться",
+        "возвращение",
+        "переезд",
+        "дорога",
+        "путь",
+        "далеко",
+        "близко",
+        "заграница",
+        "граница",
+        "переход"
+      ],
+      "fr": [
+        "voyage",
+        "voyager",
+        "partir",
+        "depart",
+        "arrive",
+        "arrivee",
+        "retour",
+        "revenir",
+        "demenagement",
+        "route",
+        "chemin",
+        "loin",
+        "pres",
+        "etranger",
+        "frontiere",
+        "passer"
+      ],
+      "anchor": {
+        "en": {
+          "journey": [
+            "行"
+          ],
+          "travel": [
+            "行"
+          ],
+          "travelling": [
+            "行"
+          ],
+          "road": [
+            "路"
+          ],
+          "leaving": [
+            "出"
+          ],
+          "return": [
+            "回"
+          ],
+          "distance": [
+            "遠"
+          ]
+        },
+        "es": {
+          "viaje": [
+            "行"
+          ],
+          "viajar": [
+            "行"
+          ],
+          "camino": [
+            "路"
+          ],
+          "salir": [
+            "出"
+          ],
+          "volver": [
+            "回"
+          ],
+          "lejos": [
+            "遠"
+          ]
+        },
+        "ru": {
+          "путь": [
+            "行"
+          ],
+          "дорога": [
+            "路"
+          ],
+          "уити": [
+            "出"
+          ],
+          "вернуться": [
+            "回"
+          ],
+          "далеко": [
+            "遠"
+          ]
+        },
+        "fr": {
+          "voyage": [
+            "行"
+          ],
+          "voyager": [
+            "行"
+          ],
+          "route": [
+            "路"
+          ],
+          "partir": [
+            "出"
+          ],
+          "retour": [
+            "回"
+          ],
+          "loin": [
+            "遠"
+          ]
+        }
+      }
+    },
+    {
+      "id": "excrement",
+      "book": [
+        {
+          "hant": "屎",
+          "hans": "屎"
+        },
+        {
+          "hant": "糞",
+          "hans": "粪"
+        },
+        {
+          "hant": "屎尿",
+          "hans": "屎尿"
+        },
+        {
+          "hant": "污",
+          "hans": "污"
+        },
+        {
+          "hant": "泥",
+          "hans": "泥"
+        },
+        {
+          "hant": "汗",
+          "hans": "汗"
+        },
+        {
+          "hant": "尿",
+          "hans": "尿"
+        }
+      ],
+      "en": [
+        "poop",
+        "feces",
+        "faeces",
+        "shit",
+        "excrement",
+        "pee",
+        "urine",
+        "piss",
+        "dirt",
+        "dirty",
+        "mud",
+        "sweat",
+        "filth",
+        "stain",
+        "vomit",
+        "sick"
+      ],
+      "ja": [
+        "フン",
+        "うんこ",
+        "大便",
+        "小便",
+        "おしっこ",
+        "汚い",
+        "泥",
+        "汗",
+        "よごれ",
+        "吐き気"
+      ],
+      "es": [
+        "caca",
+        "heces",
+        "mierda",
+        "excremento",
+        "orina",
+        "pipi",
+        "sucio",
+        "sucia",
+        "barro",
+        "sudor",
+        "basura",
+        "vomitar",
+        "nausea"
+      ],
+      "ru": [
+        "кал",
+        "кака",
+        "испражнения",
+        "поме",
+        "моча",
+        "писать",
+        "мочить",
+        "грязь",
+        "грязный",
+        "грязно",
+        "пот",
+        "рвота",
+        "тошнота"
+      ],
+      "fr": [
+        "crotte",
+        "excrements",
+        "selles",
+        "pipi",
+        "urine",
+        "pisse",
+        "sale",
+        "souiller",
+        "boue",
+        "sueur",
+        "vomir",
+        "nausee"
+      ]
+    },
+    {
+      "id": "teeth",
+      "book": [
+        {
+          "hant": "牙",
+          "hans": "牙"
+        },
+        {
+          "hant": "齒",
+          "hans": "齿"
+        }
+      ],
+      "en": [
+        "teeth",
+        "tooth",
+        "dentist",
+        "cavity",
+        "toothache",
+        "lose a tooth",
+        "pulling teeth",
+        "rotten teeth"
+      ],
+      "ja": [
+        "歯",
+        "歯医者",
+        "親不知",
+        "虫歯"
+      ],
+      "es": [
+        "diente",
+        "dientes",
+        "dentista",
+        "caries",
+        "molar",
+        "muela",
+        "dentadura",
+        "mordida"
+      ],
+      "ru": [
+        "зуб",
+        "зубы",
+        "стоматолог",
+        "кариес",
+        "коренной",
+        "прикус",
+        "зубная боль"
+      ],
+      "fr": [
+        "dent",
+        "dents",
+        "dentiste",
+        "carie",
+        "molaire",
+        "morsure",
+        "dentition"
+      ],
+      "anchor": {
+        "en": {
+          "teeth": [
+            "齒"
+          ],
+          "tooth": [
+            "齒"
+          ]
+        },
+        "es": {
+          "dientes": [
+            "齒"
+          ],
+          "diente": [
+            "齒"
+          ],
+          "dentadura": [
+            "齒"
+          ]
+        },
+        "ru": {
+          "зубы": [
+            "齒"
+          ],
+          "зуб": [
+            "齒"
+          ],
+          "зубов": [
+            "齒"
+          ]
+        },
+        "fr": {
+          "dents": [
+            "齒"
+          ],
+          "dent": [
+            "齒"
+          ],
+          "denture": [
+            "齒"
+          ]
+        }
+      }
+    },
+    {
+      "id": "numbers",
+      "book": [
+        {
+          "hant": "三",
+          "hans": "三"
+        },
+        {
+          "hant": "四",
+          "hans": "四"
+        },
+        {
+          "hant": "五",
+          "hans": "五"
+        },
+        {
+          "hant": "百",
+          "hans": "百"
+        },
+        {
+          "hant": "千",
+          "hans": "千"
+        },
+        {
+          "hant": "萬",
+          "hans": "万"
+        }
+      ],
+      "en": [
+        "number",
+        "numbers",
+        "count",
+        "counting",
+        "lottery",
+        "ticket",
+        "numbers game",
+        "math",
+        "maths",
+        "mathematics",
+        "arithmetic",
+        "calculating",
+        "lucky number"
+      ],
+      "ja": [
+        "数",
+        "数字",
+        "数える",
+        "宝くじ",
+        "券",
+        "数学",
+        "算数",
+        "計算",
+        "番号",
+        "数式"
+      ],
+      "es": [
+        "numero",
+        "numeros",
+        "cuenta",
+        "contar",
+        "lotería",
+        "billete",
+        "matematicas",
+        "calculo",
+        "cuenta atrasada"
+      ],
+      "ru": [
+        "число",
+        "числа",
+        "счет",
+        "считать",
+        "лотерея",
+        "билет",
+        "математика",
+        "расчет"
+      ],
+      "fr": [
+        "nombre",
+        "nombres",
+        "compter",
+        "compte",
+        "loterie",
+        "billet",
+        "mathematiques",
+        "calcul",
+        "arithmetique"
+      ]
+    },
+    {
+      "id": "pregnancy",
+      "book": [
+        {
+          "hant": "孕",
+          "hans": "孕"
+        },
+        {
+          "hant": "有孕",
+          "hans": "有孕"
+        }
+      ],
+      "en": [
+        "pregnant",
+        "pregnancy",
+        "with child",
+        "expecting a baby"
+      ],
+      "ja": [
+        "妊娠",
+        "孕む",
+        "怀孕",
+        "怀孕中"
+      ],
+      "es": [
+        "embarazada",
+        "embarazo",
+        "grávida"
+      ],
+      "ru": [
+        "беременная",
+        "беременность",
+        "беременна"
+      ],
+      "fr": [
+        "enceinte",
+        "grossesse",
+        "gravide"
+      ],
+      "anchor": {
+        "en": {
+          "pregnant": [
+            "孕"
+          ],
+          "pregnancy": [
+            "孕"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mother",
+      "book": [
+        {
+          "hant": "母",
+          "hans": "母"
+        },
+        {
+          "hant": "父母",
+          "hans": "父母"
+        }
+      ],
+      "en": [
+        "mother",
+        "mom",
+        "mum",
+        "mama"
+      ],
+      "ja": [
+        "母",
+        "お母さん",
+        "母親"
+      ],
+      "es": [
+        "madre",
+        "mama",
+        "mamá"
+      ],
+      "ru": [
+        "мать",
+        "мама",
+        "матери"
+      ],
+      "fr": [
+        "mère",
+        "mere",
+        "maman"
+      ],
+      "anchor": {
+        "en": {
+          "mother": [
+            "母"
+          ],
+          "mom": [
+            "母"
+          ],
+          "mum": [
+            "母"
+          ],
+          "mama": [
+            "母"
+          ]
+        }
+      }
+    },
+    {
+      "id": "father",
+      "book": [
+        {
+          "hant": "父",
+          "hans": "父"
+        },
+        {
+          "hant": "父母",
+          "hans": "父母"
+        }
+      ],
+      "en": [
+        "father",
+        "dad",
+        "papa"
+      ],
+      "ja": [
+        "父",
+        "お父さん",
+        "父親"
+      ],
+      "es": [
+        "padre",
+        "papa",
+        "papá"
+      ],
+      "ru": [
+        "отец",
+        "папа",
+        "отца"
+      ],
+      "fr": [
+        "père",
+        "pere",
+        "papa"
+      ],
+      "anchor": {
+        "en": {
+          "father": [
+            "父"
+          ],
+          "dad": [
+            "父"
+          ]
+        }
+      }
+    }
+  ]
+}

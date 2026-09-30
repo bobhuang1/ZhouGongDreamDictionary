@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+.env
+.env.local
+
+# Source snapshots and the MediaWiki conversion cache. Reproducible with
+# `npm run fetch:source` and `npm run build:book`.
+.cache/
+
+# Never commit a half-written translation file or anything resembling a key.
+data/translations/*.partial.json
+data/translations/*.tmp.json
+*.key
+
+*.log
+.playwright-mcp/
+
+# Text files should use LF in the repository regardless of the local OS, so
+# workflow files and scripts behave the same on Windows and in Linux CI.
+* text=auto eol=lf

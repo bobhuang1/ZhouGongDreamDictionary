@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zhougong Dream Dictionary</title>
+<meta name="description" content="A classical Chinese dream book, read in plain language. Ask about your dream in English, Chinese, Japanese, Spanish, Russian or French.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Zhougong Dream Dictionary">
+<meta property="og:description" content="A classical Chinese dream book, read in plain language.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#ask">Skip to the question</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">夢</span>
+      <span class="brand-text">
+        <strong data-i18n="siteTitle">Zhougong Dream Dictionary</strong>
+        <small data-i18n="siteSubtitle"></small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <label class="lang-picker">
+        <span class="sr-only" data-i18n="langLabel">Language</span>
+        <select id="langSelect"></select>
+      </label>
+      <button type="button" id="themeToggle" class="icon-btn" data-i18n-title="themeToggle">
+        <span aria-hidden="true" id="themeIcon">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-in">
+      <h1 data-i18n="heroTitle">What did you dream?</h1>
+      <p class="hero-sub" data-i18n="heroSub"></p>
+
+      <form id="ask" class="ask" novalidate>
+        <label class="sr-only" for="dreamInput" data-i18n="heroTitle"></label>
+        <textarea id="dreamInput" rows="3" maxlength="600" data-i18n-placeholder="askPlaceholder"></textarea>
+        <div class="ask-actions">
+          <button type="submit" id="askButton" class="primary" data-i18n="askButton">Interpret my dream</button>
+          <span class="char-count" id="charCount"></span>
+        </div>
+      </form>
+
+      <div class="examples">
+        <span class="examples-label" data-i18n="examples"></span>
+        <div class="chips" id="exampleChips"></div>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="results" class="results wrap" hidden>
+    <div id="resultMain" hidden>
+      <h2 class="section-title" data-i18n="resultsHeading"></h2>
+      <article id="interpretation" class="card reading" hidden>
+        <h3 data-i18n="interpretationHeading"></h3>
+        <div id="readingBody" class="reading-body"></div>
+        <p class="note" data-i18n="aiNote"></p>
+      </article>
+
+      <article class="card">
+        <header class="card-head">
+          <h3 data-i18n="matchedTitle"></h3>
+          <p class="card-sub" data-i18n="matchedSub"></p>
+        </header>
+        <ol id="entryList" class="entries"></ol>
+      </article>
+
+      <div class="row">
+        <button type="button" id="askAnother" class="ghost" data-i18n="askAnother"></button>
+      </div>
+    </div>
+
+    <div id="resultEmpty" class="card empty" hidden>
+      <h3 data-i18n="noMatches"></h3>
+      <p data-i18n="noMatchesHint"></p>
+    </div>
+  </section>
+
+  <section class="wrap info">
+    <details class="disclosure" id="keyDisclosure">
+      <summary>
+        <span data-i18n="keyRequired"></span>
+        <span class="chev" aria-hidden="true">▸</span>
+      </summary>
+      <div class="disclosure-body">
+        <p data-i18n="keyRequiredHint"></p>
+        <div class="key-form">
+          <label for="apiKey" data-i18n="keyLabel"></label>
+          <div class="key-row">
+            <input type="password" id="apiKey" autocomplete="off" spellcheck="false" data-i18n-placeholder="keyPlaceholder">
+            <button type="button" id="saveKey" class="primary" data-i18n="save">Save</button>
+            <button type="button" id="clearKey" class="ghost" data-i18n="clear">Remove key</button>
+          </div>
+          <p class="note" data-i18n="keyHint"></p>
+          <p class="note" id="keyStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </details>
+
+    <details class="disclosure">
+      <summary>
+        <span data-i18n="browseHeading"></span>
+        <span class="chev" aria-hidden="true">▸</span>
+      </summary>
+      <div class="disclosure-body">
+        <p class="note" data-i18n="browseHint"></p>
+        <input type="search" id="bookSearch" data-i18n-placeholder="searchPlaceholder" aria-label="search">
+        <p class="note" id="browseCount"></p>
+        <div id="browseResults" class="browse"></div>
+      </div>
+    </details>
+
+    <details class="disclosure">
+      <summary>
+        <span data-i18n="sourceHeading"></span>
+        <span class="chev" aria-hidden="true">▸</span>
+      </summary>
+      <div class="disclosure-body">
+        <p data-i18n="sourceText"></p>
+        <p class="book-title" id="bookTitle"></p>
+        <p class="links">
+          <a id="linkTraditional" href="https://zh.wikisource.org/wiki/%E5%91%A8%E5%85%AC%E8%A7%A3%E5%A4%A2" target="_blank" rel="noopener noreferrer" data-i18n="sourceTraditional"></a>
+          <a id="linkSimplified" href="https://www.zhouyi.cc/jiemeng/yuanbanJm/" target="_blank" rel="noopener noreferrer" data-i18n="sourceSimplified"></a>
+        </p>
+      </div>
+    </details>
+
+    <details class="disclosure">
+      <summary>
+        <span data-i18n="aboutHeading"></span>
+        <span class="chev" aria-hidden="true">▸</span>
+      </summary>
+      <div class="disclosure-body">
+        <p data-i18n="aboutText"></p>
+        <p class="note" data-i18n="disclaimer"></p>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <p data-i18n="footerLine"></p>
+    <a href="#top" data-i18n="backToTop"></a>
+  </div>
+</footer>
+
+<div id="live" class="sr-only" role="status" aria-live="polite"></div>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
