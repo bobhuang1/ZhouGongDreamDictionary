@@ -266,12 +266,30 @@ export async function checkService() {
   }
 }
 
-/** Cheap call used only to check whether a pasted personal key works. */
+/**
+ * Cheap call used only to check whether a pasted personal key works.
+ *
+ * Uses the first model only. A rate-limited key (429) is not an invalid key, and
+ * saying so would send the reader off to re-copy a perfectly good key, so the
+ * caller distinguishes the two.
+ */
 export async function testKey(apiKey) {
-  await callGemini(apiKey, {
-    contents: [{ parts: [{ text: 'Reply with the single word: ok' }] }],
-    generationConfig: { maxOutputTokens: 8 },
-  }, { attempts: 1 });
+  const result = await callGemini(
+    apiKey,
+    {
+      contents: [{ parts: [{ text: 'Reply with the single word: ok' }] }],
+      generationConfig: { maxOutputTokens: 8 },
+    },
+    { attempts: 1 },
+  ).catch((err) => {
+    if (err instanceof AiError && err.status === 429) return 'rate-limited';
+    throw err;
+  });
+  if (result === 'rate-limited') {
+    throw new AiError('Google is rate-limiting this key right now. It may still be valid — try the reading.', {
+      status: 429,
+    });
+  }
   return true;
 }
 

@@ -399,10 +399,18 @@ function initKeyUI() {
       await testKey(key);
       saveKey(key);
       el.keyStatus.textContent = t('keySaved');
-    } catch {
-      saveKey('');
-      el.apiKey.value = '';
-      el.keyStatus.textContent = t('keyFailed');
+    } catch (err) {
+      if (err instanceof AiError && err.status === 429) {
+        // Rate-limited, not invalid. Keep the key the reader pasted; telling
+        // them it "did not work" and clearing the box is both wrong and rude.
+        saveKey(key);
+        el.keyStatus.textContent = err.message;
+      } else {
+        // Genuinely rejected, so the key is worthless: drop it.
+        saveKey('');
+        el.apiKey.value = '';
+        el.keyStatus.textContent = t('keyFailed');
+      }
     } finally {
       el.saveKey.disabled = false;
       el.saveKey.textContent = original;
