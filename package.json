@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "description": "Localized AI dream dictionary based on the classical Zhou Gong Jie Meng (周公解夢). Static site, no build step.",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "scripts": {
     "start": "node server.mjs",
     "dev": "node server.mjs",
