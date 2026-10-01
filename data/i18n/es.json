@@ -22,12 +22,10 @@
   "toneMixed": "Depende",
   "noMatches": "El libro no tiene una entrada que coincida",
   "noMatchesHint": "Esto pasa con sueños modernos o abstractos. Prueba a nombrar algo concreto que viste: un animal, un objeto, un lugar, una persona.",
-  "keyRequired": "Añade una clave gratuita de IA para una lectura completa",
-  "keyRequiredHint": "Sin clave, el sitio sigue encontrando los fragmentos con un buscador local, pero no puede reescribirlos en lenguaje claro.",
   "addKey": "Añadir clave de IA",
   "settingsHeading": "Ajustes de IA",
-  "keyLabel": "Clave de la API de Google Gemini",
-  "keyHint": "Clave gratuita en aistudio.google.com/apikey. Se guarda solo en el localStorage de este navegador y se envía solo a la API de Google desde tu dispositivo. Nunca pongas una clave en una URL ni la subas a un repositorio.",
+  "keyLabel": "Clave de la API de Google Gemini (opcional)",
+  "keyHint": "Clave gratuita en aistudio.google.com/apikey. Se guarda solo en el localStorage de este navegador y se envía solo a la API de Google desde tu dispositivo. Si la dejas vacía se usa el servicio del sitio. Nunca pongas una clave en una URL ni la subas a un repositorio.",
   "keyPlaceholder": "AIza…",
   "save": "Guardar",
   "clear": "Quitar la clave",
@@ -42,7 +40,8 @@
   "searchPlaceholder": "Buscar: serpiente, río, dientes, dinero…",
   "noSearchResults": "Nada coincide con esa búsqueda.",
   "sourceHeading": "El libro original",
-  "sourceText": "Los fragmentos proceden del 周公解夢, una recopilación de interpretaciones de sueños chinos acumulada a lo largo de muchos siglos y publicada bajo el nombre del duque de Zhou. No es científica ni predice el futuro: es el registro de lo que la gente creía que significaban sus sueños, y sigue siendo una buena manera de ver en qué está trabajando tu propia mente.",  "sourceTraditional": "Original en chino tradicional",
+  "sourceText": "Los fragmentos proceden del 周公解夢, una recopilación de interpretaciones de sueños chinos acumulada a lo largo de muchos siglos y publicada bajo el nombre del duque de Zhou. No es científica ni predice el futuro: es el registro de lo que la gente creía que significaban sus sueños, y sigue siendo una buena manera de ver en qué está trabajando tu propia mente.",
+  "sourceTraditional": "Original en chino tradicional",
   "sourceSimplified": "Versión en chino simplificado",
   "bookStats": "{entries} entradas en {sections} capítulos, dominio público",
   "disclaimer": "Para reflexión y entretenimiento. No es predicción ni consejo médico o psicológico.",
@@ -57,5 +56,7 @@
   "footerLine": "Demo de código abierto. El libro es de dominio público.",
   "copied": "Copiado",
   "copyLink": "Copiar enlace",
-  "askAnother": "Consultar otro sueño"
+  "askAnother": "Consultar otro sueño",
+  "keyOptional": "Usar tu propia clave de IA (opcional)",
+  "keyOptionalHint": "La lectura completa funciona sin configurar nada: el sitio envía tu pregunta y los fragmentos encontrados a su propio servicio de IA, así que nunca ves una clave. Añade la tuya solo si alcanzas el límite de uso o prefieres no usar la compartida."
 }

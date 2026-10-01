@@ -22,12 +22,10 @@
   "toneMixed": "Cela dépend",
   "noMatches": "Le livre n'a pas d'entrée correspondante",
   "noMatchesHint": "Cela arrive avec les rêves modernes ou abstraits. Nommez une chose concrète que vous avez vue : un animal, un objet, un lieu, une personne.",
-  "keyRequired": "Ajoutez une clé IA gratuite pour une lecture complète",
-  "keyRequiredHint": "Sans clé, le site trouve quand même les passages avec une recherche locale, mais ne peut pas les réécrire en langage clair.",
   "addKey": "Ajouter une clé IA",
   "settingsHeading": "Réglages IA",
-  "keyLabel": "Clé d'API Google Gemini",
-  "keyHint": "Clé gratuite sur aistudio.google.com/apikey. Elle reste dans le localStorage de ce navigateur et n'est envoyée qu'à l'API Google depuis votre appareil. Ne mettez jamais une clé dans une URL et n'en committez pas.",
+  "keyLabel": "Clé d'API Google Gemini (facultative)",
+  "keyHint": "Clé gratuite sur aistudio.google.com/apikey. Elle reste dans le localStorage de ce navigateur et n'est envoyée qu'à l'API Google depuis votre appareil. Laissez le champ vide pour utiliser le service du site. Ne mettez jamais une clé dans une URL et n'en committez pas.",
   "keyPlaceholder": "AIza…",
   "save": "Enregistrer",
   "clear": "Supprimer la clé",
@@ -58,5 +56,7 @@
   "footerLine": "Démonstration open source. Le livre lui-même est du domaine public.",
   "copied": "Copié",
   "copyLink": "Copier le lien",
-  "askAnother": "Poser une autre question"
+  "askAnother": "Poser une autre question",
+  "keyOptional": "Utiliser votre propre clé IA (facultatif)",
+  "keyOptionalHint": "La lecture complète fonctionne sans configuration : le site envoie votre question et les passages trouvés à son propre service IA, vous ne voyez donc jamais de clé. N'ajoutez la vôtre qu'en cas de limite d'usage, ou si vous préférez ne pas utiliser la clé partagée."
 }

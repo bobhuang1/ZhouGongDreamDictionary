@@ -22,12 +22,10 @@
   "toneMixed": "因人而异",
   "noMatches": "书中没有明确对应的条目",
   "noMatchesHint": "现代或抽象的梦常会如此。试着说出一个具体的东西：一种动物、一件物品、一个地方、一个人。",
-  "keyRequired": "免费填入密钥，可得完整解读",
-  "keyRequiredHint": "没有密钥时，站点仍能用本地词表比对并显示原文，但无法改写成白话。",
   "addKey": "填入密钥",
   "settingsHeading": "AI 设置",
-  "keyLabel": "Google Gemini API 密钥",
-  "keyHint": "免费密钥请到 aistudio.google.com/apikey 申请。密钥只存于本机浏览器的 localStorage，并且只从你的设备发送给 Google。不要把密钥放在网址里，也不要提交到版本库。",
+  "keyLabel": "Google Gemini API 密钥（选填）",
+  "keyHint": "免费密钥请到 aistudio.google.com/apikey 申请。密钥只存于本机浏览器的 localStorage，并且只从你的设备发送给 Google。留空则改用站点自己的服务。不要把密钥放在网址里，也不要提交到版本库。",
   "keyPlaceholder": "AIza…",
   "save": "保存",
   "clear": "移除密钥",
@@ -58,5 +56,7 @@
   "footerLine": "开源示范。原书属公有领域。",
   "copied": "已复制",
   "copyLink": "复制链接",
-  "askAnother": "再问一个梦"
+  "askAnother": "再问一个梦",
+  "keyOptional": "使用自己的 AI 密钥（选填）",
+  "keyOptionalHint": "不需要任何设置即可得到完整解读：站点会把你的问题与比对到的原文送交自己的 AI 服务，你不会看到任何密钥。只有在遇到用量限制，或你不想共用密钥时，才需要填入自己的密钥。"
 }

@@ -22,12 +22,10 @@
   "toneMixed": "Depends",
   "noMatches": "The book has no entry that clearly matches",
   "noMatchesHint": "This happens with modern or abstract dreams. Try naming one concrete thing you saw: an animal, an object, a place, a person.",
-  "keyRequired": "Add a free AI key for a full reading",
-  "keyRequiredHint": "Without a key the site still finds the matching passages using a local word matcher, but it cannot rewrite them into plain language.",
   "addKey": "Add AI key",
   "settingsHeading": "AI settings",
-  "keyLabel": "Google Gemini API key",
-  "keyHint": "Free key from aistudio.google.com/apikey. It is stored only in this browser's localStorage and is sent only to Google's API from your device. Never put a key in the URL or commit one to a repository.",
+  "keyLabel": "Google Gemini API key (optional)",
+  "keyHint": "Free key from aistudio.google.com/apikey. It is stored only in this browser's localStorage and is sent only to Google's API from your device. Leaving this empty uses the site's own service instead. Never put a key in the URL or commit one to a repository.",
   "keyPlaceholder": "AIza…",
   "save": "Save",
   "clear": "Remove key",
@@ -58,5 +56,7 @@
   "footerLine": "Open source demo. The book itself is public domain.",
   "copied": "Copied",
   "copyLink": "Copy link",
-  "askAnother": "Ask another dream"
+  "askAnother": "Ask another dream",
+  "keyOptional": "Use your own AI key (optional)",
+  "keyOptionalHint": "A full reading works with no setup: the site sends your question and the matched passages to its own AI service, so you never see a key. Add your own key only if you hit the rate limit or would rather not use the shared one."
 }

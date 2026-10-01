@@ -22,12 +22,10 @@
   "toneMixed": "因人而異",
   "noMatches": "書中沒有明確對應的條目",
   "noMatchesHint": "現代或抽象的夢常會如此。試著說出一個具體的東西：一種動物、一件物品、一個地方、一個人。",
-  "keyRequired": "免費填入金鑰，可得完整解讀",
-  "keyRequiredHint": "沒有金鑰時，站點仍能用本地詞表比對並顯示原文，但無法改寫成白話。",
   "addKey": "填入金鑰",
   "settingsHeading": "AI 設定",
-  "keyLabel": "Google Gemini API 金鑰",
-  "keyHint": "免費金鑰請至 aistudio.google.com/apikey 申請。金鑰只存於本機瀏覽器的 localStorage，並且只從你的裝置傳送給 Google。不要把金鑰放在網址裡，也不要提交到版本庫。",
+  "keyLabel": "Google Gemini API 金鑰（選填）",
+  "keyHint": "免費金鑰請至 aistudio.google.com/apikey 申請。金鑰只存於本機瀏覽器的 localStorage，並且只從你的裝置傳送給 Google。留空則改用站點自己的服務。不要把金鑰放在網址裡，也不要提交到版本庫。",
   "keyPlaceholder": "AIza…",
   "save": "儲存",
   "clear": "移除金鑰",
@@ -58,5 +56,7 @@
   "footerLine": "開源示範。原書屬公有領域。",
   "copied": "已複製",
   "copyLink": "複製連結",
-  "askAnother": "再問一個夢"
+  "askAnother": "再問一個夢",
+  "keyOptional": "使用自己的 AI 金鑰（選填）",
+  "keyOptionalHint": "不需要任何設定即可得到完整解讀：站點會把你的問題與比對到的原文送交自己的 AI 服務，你不會看到任何金鑰。只有在遇到用量限制，或你不想共用金鑰時，才需要填入自己的金鑰。"
 }

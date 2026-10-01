@@ -22,12 +22,10 @@
   "toneMixed": "人により異なる",
   "noMatches": "該当する記載が見つかりません",
   "noMatchesHint": "現代の夢や抽象的な夢ではそうなります。動物、もの、場所、人など、見えるものを具体的に一つ挙げてください。",
-  "keyRequired": "無料のAIキーで完全解读",
-  "keyRequiredHint": "キーがなくても、ローカルの語彙照合で該当箇所は表示できます。やさいしい言葉への書き換えだけができなくなります。",
   "addKey": "AIキーを追加",
   "settingsHeading": "AI設定",
-  "keyLabel": "Google Gemini APIキー",
-  "keyHint": "無料キーは aistudio.google.com/apikey で取得できます。キーはこのブラウザーのlocalStorageにのみ保存され、お使いの端末からGoogleにのみ送信されます。URLにキーを含めたり、リポジトリにコミットしたりしないでください。",
+  "keyLabel": "Google Gemini APIキー（任意）",
+  "keyHint": "無料キーは aistudio.google.com/apikey で取得できます。キーはこのブラウザーのlocalStorageにのみ保存され、お使いの端末からGoogleにのみ送信されます。空欄のままならサイト側のサービスを使います。URLにキーを含めたり、リポジトリにコミットしたりしないでください。",
   "keyPlaceholder": "AIza…",
   "save": "保存",
   "clear": "キーを削除",
@@ -58,5 +56,7 @@
   "footerLine": "オープンソースのデモです。原書はパブリックドメインです。",
   "copied": "コピーしました",
   "copyLink": "リンクをコピー",
-  "askAnother": "別の夢を尋ねる"
+  "askAnother": "別の夢を尋ねる",
+  "keyOptional": "自分のAIキーを使う（任意）",
+  "keyOptionalHint": "設定なしで全文解读が使えます。質問と該当箇所をサイト側のAIサービスに送るため、キーを目にすることもありません。利用制限に当たったとき、または共有キーを避けたいときだけ、自分のキーを入力してください。"
 }
