@@ -108,7 +108,7 @@ Both JSON files are plain and standalone:
 | `data/i18n/*.json` | Interface strings, 60 keys per locale |
 | `data/translations/*.json` | Per-entry translations, 5 languages (generated) |
 
-MIT-licensed code, public-domain text. Reuse either freely.
+GPL-3.0-licensed code, public-domain text. The text is free to reuse.
 
 ## How to use the site
 
