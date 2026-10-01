@@ -320,12 +320,8 @@ async function ask(question) {
     return;
   }
 
-  if (!key) {
-    setStatus('');
-    if (!el.keyDisclosure.open) el.keyDisclosure.open = true;
-    return;
-  }
-
+  // A key is optional. Without one the reading goes through the site proxy,
+  // which holds the key server side, so the common path is frictionless.
   setBusy(true);
   try {
     const reading = await interpret({ question: clean, lang: state.lang, passages, apiKey: key });
@@ -334,7 +330,9 @@ async function ask(question) {
   } catch (err) {
     if (!(err instanceof AiError)) throw err;
     setStatus(err.message, true);
-    if (err.status === 400 || err.status === 403) {
+    // Only about a personal key: the proxy's own 403 means an origin or
+    // config problem, which clearing a key cannot fix.
+    if (key && (err.status === 400 || err.status === 403)) {
       // A rejected key is worthless, so drop it -- but open the panel so the
       // reader can paste a working one instead of wondering where it went.
       saveKey('');

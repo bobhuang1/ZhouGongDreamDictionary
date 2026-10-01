@@ -20,8 +20,18 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BOOK = join(ROOT, 'data', 'dreambook.json');
 const OUT_DIR = join(ROOT, 'data', 'translations');
-const MODEL = 'gemini-2.5-flash';
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+/** gemini-2.5-flash is retired for new API keys (404: "no longer available to
+ *  new users"). 3.7/3.8 answer but intermittently 503 under load, so lead with
+ *  3.6 and fall back rather than stalling the whole run. */
+const MODELS = (process.env.GEMINI_MODEL || 'gemini-3.6-flash')
+  .split(',')
+  .map((m) => m.trim())
+  .filter(Boolean);
+const MODEL = MODELS[0];
+const ENDPOINTS = MODELS.map((m) => ({
+  model: m,
+  url: `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`,
+}));
 
 export const LANGS = ['en', 'ja', 'es', 'ru', 'fr'];
 
@@ -84,8 +94,9 @@ ${JSON.stringify(entries.map((e) => ({ id: e.id, text: e.zhHant, section: sectio
 
 let sectionTitles = {};
 
-async function callGemini(apiKey, lang, entries, attempt = 0) {
-  const res = await fetch(ENDPOINT, {
+async function callGemini(apiKey, lang, entries, attempt = 0, modelIdx = 0) {
+  const { model, url } = ENDPOINTS[modelIdx];
+  const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
     body: JSON.stringify({
@@ -103,14 +114,24 @@ async function callGemini(apiKey, lang, entries, attempt = 0) {
   });
 
   if (res.status === 429 || res.status >= 500) {
+    // 503 here is usually transient load on a preview model, so try the next
+    // configured model before spending a backoff cycle on this one.
+    if (res.status >= 500 && modelIdx + 1 < ENDPOINTS.length) {
+      console.log(`    ${model} ${res.status}, switching to ${ENDPOINTS[modelIdx + 1].model}`);
+      return callGemini(apiKey, lang, entries, attempt, modelIdx + 1);
+    }
     if (attempt >= 5) throw new Error(`gemini ${res.status} after retries`);
     const wait = 5000 * 2 ** attempt;
     console.log(`    gemini ${res.status}, retrying in ${wait / 1000}s`);
     await sleep(wait);
-    return callGemini(apiKey, lang, entries, attempt + 1);
+    return callGemini(apiKey, lang, entries, attempt + 1, modelIdx);
+  }
+  if (res.status === 404 && modelIdx + 1 < ENDPOINTS.length) {
+    console.log(`    ${model} retired (404), switching to ${ENDPOINTS[modelIdx + 1].model}`);
+    return callGemini(apiKey, lang, entries, attempt, modelIdx + 1);
   }
   if (!res.ok) {
-    throw new Error(`gemini ${res.status}: ${(await res.text()).slice(0, 400)}`);
+    throw new Error(`gemini ${model} ${res.status}: ${(await res.text()).slice(0, 400)}`);
   }
 
   const json = await res.json();

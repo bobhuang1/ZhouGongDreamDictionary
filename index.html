@@ -93,11 +93,12 @@
   <section class="wrap info">
     <details class="disclosure" id="keyDisclosure">
       <summary>
-        <span data-i18n="keyRequired"></span>
+        <span data-i18n="keyOptional"></span>
         <span class="chev" aria-hidden="true">▸</span>
       </summary>
       <div class="disclosure-body">
-        <p data-i18n="keyRequiredHint"></p>
+        <p data-i18n="keyOptionalHint"></p>
+        <p class="note" id="keyStatus" role="status" aria-live="polite"></p>
         <div class="key-form">
           <label for="apiKey" data-i18n="keyLabel"></label>
           <div class="key-row">
@@ -106,7 +107,6 @@
             <button type="button" id="clearKey" class="ghost" data-i18n="clear">Remove key</button>
           </div>
           <p class="note" data-i18n="keyHint"></p>
-          <p class="note" id="keyStatus" role="status" aria-live="polite"></p>
         </div>
       </div>
     </details>

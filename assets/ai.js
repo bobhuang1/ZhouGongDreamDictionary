@@ -1,21 +1,34 @@
 /**
- * AI layer: Gemini 2.5 Flash, called straight from the browser.
+ * AI layer: asks a small serverless proxy for a plain-language reading.
  *
- * Why the browser and not a server: this is a static site on GitHub Pages with
- * no backend to hold a secret, and no key means no leak. The user pastes their
- * own free key, it lives in localStorage, and the only request it is attached to
- * is the one that asks for a dream reading. A site that wanted to be a hosted
- * service would move this file behind a small proxy and keep the key server
- * side -- the rest of the app would not change, because everything else already
- * runs locally.
+ * Why a proxy: the Gemini key belongs to the site owner, not to each reader. A
+ * key in browser JavaScript cannot be hidden -- everything shipped to a client
+ * is readable in view-source or devtools, and this repository is public, so a
+ * committed key would live in git history permanently. worker/index.js holds the
+ * key as a Cloudflare Worker secret instead and never returns it.
  *
- * What is sent: the user's question, the matched book entries, and the display
- * language. Nothing else. The book is public domain and already downloaded.
+ * The proxy only sees what the reader already typed plus the matched public-domain
+ * passages. It applies rate limiting, because a public proxy with no limit is an
+ * open invitation to drain the quota.
+ *
+ * Everything else still runs locally: retrieval, prompt construction, JSON
+ * validation, and the safety framing in the system prompt. The Worker forwards
+ * the prompt text and returns raw JSON text, so it holds no interpretation logic.
+ *
+ * Fallback: if the proxy is unreachable or unconfigured, set a personal key in
+ * Settings and it talks to Google directly again.
  */
 
-const MODEL = 'gemini-2.5-flash';
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+const PROXY_URL = 'https://zhou-dream-ai.oemscarf.workers.dev';
 const KEY_STORAGE = 'zgd.geminiKey';
+
+/** Only for the direct-to-Google fallback path, when a reader supplies their own
+ *  key. The proxy picks its own model server-side. flash-lite leads because
+ *  3.6 answers with a fast 503 too often to be first; gemini-2.5-flash is
+ *  retired for new keys (404). */
+const MODELS = ['gemini-3.1-flash-lite', 'gemini-3.6-flash'];
+let modelIdx = 0;
+const endpoint = (m) => `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`;
 
 /** Names the model should use for itself, so the reply reads naturally. */
 const LANGUAGE_NAMES = {
@@ -141,7 +154,7 @@ async function callGemini(apiKey, body, { attempts = 3 } = {}) {
   for (let attempt = 0; attempt < attempts; attempt++) {
     let res;
     try {
-      res = await fetch(ENDPOINT, {
+      res = await fetch(endpoint(MODELS[modelIdx]), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-goog-api-key': apiKey },
         body: JSON.stringify(body),
@@ -169,6 +182,13 @@ async function callGemini(apiKey, body, { attempts = 3 } = {}) {
     }
 
     const err = describeError(res.status, await res.text());
+    // A retired (404) or overloaded (5xx) model is a routing problem, not a
+    // failure worth retrying on the same model: move to the next one.
+    if ((res.status === 404 || res.status >= 500) && modelIdx + 1 < MODELS.length) {
+      modelIdx += 1;
+      lastError = err;
+      continue;
+    }
     if (!err.retryable) throw err;
     lastError = err;
     await sleep(900 * 2 ** attempt);
@@ -176,7 +196,77 @@ async function callGemini(apiKey, body, { attempts = 3 } = {}) {
   throw lastError ?? new AiError('The request failed.');
 }
 
-/** Cheap call used only to check whether a pasted key works. */
+async function callProxy(body, { attempts = 3 } = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    let res;
+    try {
+      res = await fetch(`${PROXY_URL}/interpret`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch (err) {
+      lastError = new AiError('Could not reach the reading service. Check your connection.', { retryable: true });
+      await sleep(800 * 2 ** attempt);
+      continue;
+    }
+
+    if (res.ok) {
+      const json = await res.json();
+      const text = typeof json.text === 'string' ? json.text : '';
+      if (!text) throw new AiError('The reading service returned an empty answer. Try again.', { retryable: true });
+      return text;
+    }
+
+    const err = await describeProxyError(res);
+    if (!err.retryable) throw err;
+    lastError = err;
+    await sleep(900 * 2 ** attempt);
+  }
+  throw lastError ?? new AiError('The reading service did not respond.');
+}
+
+async function describeProxyError(res) {
+  let message = `The reading service failed (HTTP ${res.status}).`;
+  try {
+    const json = await res.json();
+    if (typeof json?.error === 'string' && json.error) message = json.error;
+  } catch { /* keep the generic message */ }
+
+  if (res.status === 429) {
+    const after = Number(res.headers.get('Retry-After') ?? 0);
+    return new AiError(
+      after
+        ? `Too many readings from this connection. Try again in ${Math.ceil(after / 60)} minute(s).`
+        : 'The reading service is busy. Wait a moment and try again.',
+      { retryable: false, status: 429 },
+    );
+  }
+  if (res.status >= 500) {
+    return new AiError(message, { retryable: true, status: res.status });
+  }
+  if (res.status === 422) return new AiError(message, { status: 422 });
+  return new AiError(message, { status: res.status });
+}
+
+/** True when the reader has opted into a personal key as a fallback. */
+export function hasPersonalKey() {
+  return Boolean(loadKey());
+}
+
+/** Probes the proxy. Used to report availability in Settings, not to gate a reading. */
+export async function checkService() {
+  try {
+    const res = await fetch(`${PROXY_URL}/health`, { method: 'GET' });
+    if (!res.ok) return { ok: false };
+    return { ok: true, ...(await res.json()) };
+  } catch {
+    return { ok: false };
+  }
+}
+
+/** Cheap call used only to check whether a pasted personal key works. */
 export async function testKey(apiKey) {
   await callGemini(apiKey, {
     contents: [{ parts: [{ text: 'Reply with the single word: ok' }] }],
@@ -190,10 +280,9 @@ export async function testKey(apiKey) {
  * @returns {{summary: string, points: string[], caveat: string}}
  */
 export async function interpret({ question, lang, passages, apiKey, signal }) {
-  if (!apiKey) throw new AiError('No API key set.');
   if (!passages.length) throw new AiError('No passages to interpret.');
 
-  const text = await callGemini(apiKey, {
+  const request = {
     systemInstruction: { parts: [{ text: systemPrompt(lang) }] },
     contents: [{ role: 'user', parts: [{ text: userPrompt({ question, lang, passages }) }] }],
     generationConfig: {
@@ -205,7 +294,23 @@ export async function interpret({ question, lang, passages, apiKey, signal }) {
       { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_ONLY_HIGH' },
       { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
     ],
-  }, { attempts: 3 });
+  };
+
+  // Proxy by default. A personal key is an explicit opt-in, and takes over when
+  // the reader has set one -- useful for beating the proxy's rate limit.
+  let text;
+  if (apiKey) {
+    text = await callGemini(apiKey, request, { attempts: 3 });
+  } else {
+    // The Worker builds the system prompt and the passage block itself: it owns
+    // the safety framing and the JSON reply contract, so those are not sent from
+    // a client that could be modified to drop them.
+    text = await callProxy({
+      question,
+      lang,
+      passages: passages.map((p) => ({ zhHant: p.zhHant, zhHans: p.zhHans })),
+    });
+  }
 
   if (signal?.aborted) throw new AiError('Cancelled.');
 

@@ -1,0 +1,23 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "zhou-dream-ai"
+main = "index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+preview_urls = false
+
+# Rate-limit state. Durable Objects would be stricter, but a KV fixed window is
+# enough to keep a casual quota-drainer out and needs no extra paid resource.
+[[kv_namespaces]]
+binding = "RATE_LIMITER"
+id = "7e75bc02a26d4a2d9491e412d2331def"
+
+# Secrets are NOT configured here. Set them with:
+#   npx wrangler secret put GEMINI_API_KEY
+#   npx wrangler secret put RATE_SALT
+#
+# RATE_SALT is any random string; it salts the IP hash so the KV store holds a
+# digest rather than a raw address. Generate one with:
+#   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+[observability]
+enabled = true

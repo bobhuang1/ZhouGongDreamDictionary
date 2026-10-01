@@ -15,6 +15,12 @@ data/translations/*.tmp.json
 *.log
 .playwright-mcp/
 
+# Wrangler's local state: account info, the miniflare KV mirror, and build
+# caches. Only worker/index.js and worker/wrangler.toml belong in the repo.
+worker/.wrangler/
+.dev.vars
+.wrangler/
+
 # Text files should use LF in the repository regardless of the local OS, so
 # workflow files and scripts behave the same on Windows and in Linux CI.
 * text=auto eol=lf

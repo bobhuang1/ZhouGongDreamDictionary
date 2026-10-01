@@ -80,7 +80,7 @@ await test('a well-formed reply parses into summary/points/caveat', async () => 
 await test('the request names the model and the reader\'s language', async () => {
   stubFetch(() => json200(OK_BODY));
   await interpret({ question: 'Soñé de una serpiente', lang: 'es', passages, apiKey: 'k' });
-  assert.match(lastRequest.url, /gemini-2\.5-flash:generateContent$/);
+  assert.match(lastRequest.url, /models\/gemini-[^/]+:generateContent$/);
   assert.equal(lastRequest.init.headers['x-goog-api-key'], 'k');
   const text = lastRequest.body.contents[0].parts[0].text;
   assert.match(text, /Spanish/);
@@ -170,11 +170,23 @@ await test('a 403 is not retried', async () => {
   assert.equal(calls, 1);
 });
 
-await test('a missing key fails before any network call', async () => {
-  let calls = 0;
-  stubFetch(() => { calls++; return json200(OK_BODY); });
-  await assert.rejects(() => interpret({ question: 'q', lang: 'en', passages, apiKey: '', }), AiError);
-  assert.equal(calls, 0);
+// No key is the normal case now: the reading goes through the site proxy,
+// which holds the key. A personal key is an opt-in that bypasses the proxy.
+// The proxy already unwraps the Gemini envelope and returns the model's raw
+// JSON text, so the fixture is the text itself rather than OK_BODY.
+await test('with no key the request goes to the proxy, not to Google', async () => {
+  stubFetch(() => json200({ text: OK_BODY.candidates[0].content.parts[0].text }));
+  const reading = await interpret({ question: 'q', lang: 'en', passages, apiKey: '' });
+  assert.match(lastRequest.url, /zhou-dream-ai\.oemscarf\.workers\.dev\/interpret$/);
+  assert.equal(lastRequest.init.headers['x-goog-api-key'], undefined);
+  assert.equal(reading.caveat, 'This is a classical folk text, not a prediction.');
+});
+
+await test('a personal key bypasses the proxy and calls Google directly', async () => {
+  stubFetch(() => json200(OK_BODY));
+  await interpret({ question: 'q', lang: 'en', passages, apiKey: 'personal' });
+  assert.match(lastRequest.url, /generativelanguage\.googleapis\.com/);
+  assert.equal(lastRequest.init.headers['x-goog-api-key'], 'personal');
 });
 
 await test('no passages fails before any network call', async () => {
