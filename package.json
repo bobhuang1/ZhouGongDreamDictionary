@@ -14,7 +14,7 @@
     "translate": "node tools/translate-batch.mjs",
     "translate:status": "node tools/translate-batch.mjs --status",
     "validate": "node tools/validate.mjs",
-    "test": "node tools/selftest.mjs && node tools/test-ai.mjs && node tools/validate.mjs",
+    "test": "node tools/selftest.mjs && node tools/test-ai.mjs && node tools/test-worker.mjs && node tools/validate.mjs",
     "test:matcher": "node tools/selftest.mjs",
     "test:ai": "node tools/test-ai.mjs"
   },

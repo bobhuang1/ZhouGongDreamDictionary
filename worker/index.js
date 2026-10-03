@@ -40,9 +40,14 @@ const JSON_HEADERS = {
  * Rate limiting
  *
  * A shared public key plus no limit is an open invitation to drain the
- * quota. 10 Worker invocations/hour/IP is generous for dream readings and
- * cheap to enforce. The counter is best-effort: it is a KV-based fixed
- * window, so a burst across instances can slip a few requests through.
+ * quota. Two layers:
+ *  - AI_RATE_LIMIT, the Workers rate-limit binding (wrangler.toml), is
+ *    enforced at the edge and stops bursts, including parallel requests that
+ *    a KV read-modify-write cannot see.
+ *  - The KV sliding window below adds the 10 readings/hour/IP budget. KV is
+ *    eventually consistent and has a daily write quota, so it is best-effort:
+ *    if KV fails the request is allowed (the binding still bounds abuse)
+ *    instead of the whole Worker throwing for every user.
  * ------------------------------------------------------------------ */
 
 const WINDOW_SECONDS = 3600;
@@ -62,9 +67,24 @@ async function clientKey(request, env) {
 }
 
 async function checkRateLimit(request, env) {
-  if (!env.RATE_LIMITER) return { allowed: true };
   const key = await clientKey(request, env);
 
+  if (env.AI_RATE_LIMIT) {
+    const { success } = await env.AI_RATE_LIMIT.limit({ key });
+    if (!success) return { allowed: false, retryAfter: 60 };
+  }
+
+  if (!env.RATE_LIMITER) return { allowed: true };
+  try {
+    return await checkHourlyWindow(env, key);
+  } catch (err) {
+    // KV write quota exhausted or KV unavailable: fail open, deliberately.
+    console.error('KV rate limiter unavailable, allowing request:', err);
+    return { allowed: true };
+  }
+}
+
+async function checkHourlyWindow(env, key) {
   // Sliding window: a list of recent request timestamps rather than a counter.
   // A fixed window is wrong here because the reset only happens on the next
   // request, so a reader who used their quota was locked out for a full hour
@@ -129,7 +149,9 @@ function describeUpstreamError(status, body) {
   if (status === 400) {
     // A malformed request will never succeed, so surface the reason instead of
     // reporting it as a temporary outage.
-    return { message: `Google rejected the request: ${body.slice(0, 200)}`, retryable: false };
+    // Keep Google's error text in the logs, not in the response.
+    console.error('Gemini rejected the request:', body.slice(0, 500));
+    return { message: 'Google rejected the request.', retryable: false };
   }
   if (status === 403) {
     return { message: 'The server key is not allowed to use this model.', retryable: false };
@@ -293,7 +315,12 @@ export default {
       return json(request, 403, { error: 'Origin not allowed.' });
     }
 
-    // Count before the config check, so an unconfigured or misconfigured Worker
+    if (!env.RATE_SALT) {
+      // Without the salt the KV keys would be plain hashes of IP addresses.
+      return json(request, 500, { error: 'The reading service is not configured.' });
+    }
+
+    // Count before the API key check, so an unconfigured or misconfigured Worker
     // cannot be used to hammer Google for free once a key is added later.
     const limit = await checkRateLimit(request, env);
     if (!limit.allowed) {

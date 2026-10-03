@@ -5,8 +5,20 @@ compatibility_date = "2025-09-01"
 workers_dev = true
 preview_urls = false
 
-# Rate-limit state. Durable Objects would be stricter, but a KV fixed window is
-# enough to keep a casual quota-drainer out and needs no extra paid resource.
+# Edge rate limit: at most 3 readings per minute per client, enforced by
+# Cloudflare before KV is involved (stops parallel bursts). namespace_id is any
+# number unique within the account.
+[[ratelimits]]
+name = "AI_RATE_LIMIT"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 3
+  period = 60
+
+# Hourly budget (10 per IP) as a KV sliding window. Best-effort: if KV fails
+# (e.g. the free plan's daily write quota) requests are allowed and the edge
+# limit above still applies.
 [[kv_namespaces]]
 binding = "RATE_LIMITER"
 id = "7e75bc02a26d4a2d9491e412d2331def"
