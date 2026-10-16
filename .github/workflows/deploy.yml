@@ -31,9 +31,12 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
+      # Short retention: the deploy job consumes this artifact immediately,
+      # so anything longer only sits in the Actions storage quota.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+          retention-days: 1
 
   deploy:
     needs: build
